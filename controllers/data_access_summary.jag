@@ -1,0 +1,21 @@
+<%
+    var host = request.getParameter("host")
+    var port = request.getParameter("port")
+    var username = request.getParameter("username")
+    var password = request.getParameter("password")
+    var db_name = request.getParameter("db_name")
+    var queries = request.getParameter("query")
+ 
+    try {
+
+		  config = {};
+		  var db = new Database("jdbc:mysql://"+host+":"+port+"/"+db_name, username, password, config);
+		  
+		  var result = db.query(queries);
+		  print(result);
+
+		}
+		catch(e)  {
+		  print(e.toString());
+		}
+%>

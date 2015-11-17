@@ -1,9 +1,8 @@
 <%
-
 try {
-  
+
   config = {};
-  var db = new Database("jdbc:mysql://localhost:3306/dashboard_new", "root", "123123", config); 
+  var db = new Database("jdbc:mysql://localhost:3306/Dshbd", "root", "123123", config); 
 }
 catch(e)  {
   print(e.toString());

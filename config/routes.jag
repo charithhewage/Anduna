@@ -1,0 +1,48 @@
+<%
+var dirr, ctrl;
+var controller = '../controllers/';
+
+(function () {
+
+  //Root should be cofigured here.
+  var root = 'home';
+  
+  var log = new Log();
+
+  var originalURI = request.getRequestURI();
+  var uriMatcher = new URIMatcher(originalURI);
+
+  if (uriMatcher.match('/{dirr}') || uriMatcher.match('/{dirr}/')) {
+    vars = uriMatcher.elements();
+    urlDomain = vars.domain;
+    //relativeURI = originalURI.match(/.*\/$/ig) ? '/' : '';
+    controller += root + '_controller.jag';
+  }
+
+  else if (uriMatcher.match('/{dirr}/{ctrl}') || uriMatcher.match('/{dirr}/{ctrl}/')) {
+    vars = uriMatcher.elements();
+    urlDomain = vars.domain;
+    //relativeURI = '/' + vars.ctrl;
+    vars.ctrl == 'assets' ? controller = '../' + vars.ctrl + '/' + vars.any : controller += vars.ctrl + '_controller.jag';
+    //print(controller)
+  } 
+
+  else if (uriMatcher.match('/{dirr}/{ctrl}/{+any}')) {
+    vars = uriMatcher.elements();
+    //relativeURI = originalURI.match(/.*\/$/ig) ? '/' : vars.any;
+    vars.ctrl == 'assets' ? controller = '../' + vars.ctrl + '/' + vars.any : controller += vars.ctrl + '_controller.jag';
+    //print(controller)
+  } 
+
+  else {
+    response.sendError(404, 'requested resource cannot be found');
+    return;
+  }
+  //response.contentType()
+  //vars.ctrl == 'assets' ? '' : include(controller);
+  include(controller);
+
+}());
+
+
+%>

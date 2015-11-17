@@ -1,0 +1,7 @@
+<% //include ('../config/routes.jag'); 
+
+ //var uriMatcher = new URIMatcher(request.getRequestURI());
+
+  print(request.getRequestURI());
+
+%>

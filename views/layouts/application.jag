@@ -1,9 +1,83 @@
-<html>
-<body>
-<%
-    var total = 1 + 1;
-%>
-<h2>Below is a Jaggery print</h2>
-<%=total%>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Dashboard</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="assets/css/dashboard.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+</head>
+
+  <body>
+
+    <% include ('../shared/_main_nav.jag'); %>
+    
+
+    <div class="container-fluid">
+      <div class="row">
+        <% include ('../shared/_side_nav.jag'); %>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <div class="row widget-row">
+            <div class="col-md-5 widget-full" id="widget">
+            
+            </div>
+          </div>
+
+          <div class="row widget-row">
+            <div class="col-md-5 widget-full" id="widget-2">
+            
+            </div>
+          </div>
+
+
+        </div><!-- Main -->
+        
+        <div class="alert-box-container alert--danger">
+          <h3 class="alert-header">Warning!</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+        </div> <!-- Alert container -->
+
+      </div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/application.js"></script>
+
+  
+    <script type="text/javascript">
+    	function relativePrefix(path) {
+			    var parts = path.split('/');
+			    var prefix = '';
+			    var i;
+			    var count = parts.length - 3;
+			    for (i = 0; i < count; i++) {
+			        prefix += '../';
+			    }
+			    console.log(prefix);
+			    console.log(count);
+			    console.log("completed");
+			};
+
+
+
+			relativePrefix('/dads/');
+
+
+    </script>
+
+
+
+  </body></html>

@@ -1,0 +1,20 @@
+<%
+
+    //var log = new Log();
+
+    // print("Method : " + request.getMethod() + "<br/>");
+    // print("Protocol : " + request.getProtocol() + "<br/>");
+    // print("User-Agent : " + request.getHeader("User-Agent") + "<br>");
+    // print("Content: " + request.getContent() + "<br>");
+    
+    //Spliting content
+    // var fields = request.getContent().split('&')
+    // fields.forEach(function(entry) {
+    //     var postToJSON = entry.split('=')
+    //     log.info(postToJSON);
+    // })
+    //request.getParameter("action")
+    // print(fields[0]);
+    var host = request.getParameter("host")
+    print(host);
+%>

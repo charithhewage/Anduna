@@ -1,0 +1,19 @@
+<%
+(function() {
+
+	data = {
+            id: 1,
+            title: 'sample title',
+            description: 'sample description',
+            other: {
+                viewers: 'helo',
+                editors: 'dddd'
+            },
+            pages: []
+        };
+
+  include('../views/layouts/application.jag');
+
+} ()); 
+
+%>
