@@ -1,5 +1,5 @@
 <%
-var dirr, ctrl;
+var dirr, ctrl, current_user, current_url;
 var controller = '../controllers/';
 
 (function () {
@@ -11,6 +11,24 @@ var controller = '../controllers/';
 
   var originalURI = request.getRequestURI();
   var uriMatcher = new URIMatcher(originalURI);
+
+  current_url = originalURI;
+
+  // Check current user
+  currentUser = function(){
+    var obj = {
+      first_name  : "Charith",
+      last_name   : "Lakmina",
+      email       : "charithhewage@gmail.com",
+      role        : 1,
+    };
+    session.put("user", obj);
+    //session.remove('user');
+
+    user = session.get("user");
+    return user;
+  }
+  current_user = currentUser();
 
   if (uriMatcher.match('/{dirr}') || uriMatcher.match('/{dirr}/')) {
     vars = uriMatcher.elements();

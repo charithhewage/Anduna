@@ -1,0 +1,16 @@
+<%
+(function() {
+
+  if(current_user){
+   include("../views/layouts/application.jag")  
+  }
+  else{
+  	data = { container_path: 'users/sessions/new'}
+    include("../views/layouts/no_user.jag")
+  }
+
+  
+
+} ()); 
+
+%>

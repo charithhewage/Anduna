@@ -1,18 +1,17 @@
 <%
 (function() {
 
-	data = {
-            id: 1,
-            title: 'sample title',
-            description: 'sample description',
-            other: {
-                viewers: 'helo',
-                editors: 'dddd'
-            },
-            pages: []
-        };
+  if(current_user){
+   include("../views/layouts/application.jag")  
+  }
+  else{
+    // FIX-ME Redirect to sessions_controller and check user availability.
+    //response.sendRedirect(current_url + 'sessions/');
+    data = { container_path: 'users/sessions/new'}
+    include("../views/layouts/no_user.jag") 
+  }
 
-  include('../views/layouts/application.jag');
+  
 
 } ()); 
 
