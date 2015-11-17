@@ -1,0 +1,30 @@
+@media (min-width: 992px){
+.col-md-2_new {
+  width: 25% !important;
+}
+.col-md-9_new {
+  width: 100% !important;
+}
+}
+
+.btn-more-infor{
+ margin-left: 30% !important;
+}
+
+
+.label_margin{
+  margin-left: 30% !important;
+}
+
+
+.alert-danger {
+    color: #FFFFFF !important;
+    background-color: #FF0707 !important;
+    border-color: #000000 !important;
+}
+
+.btn-default-2 {
+    
+    color: #000000 !important;
+}
+

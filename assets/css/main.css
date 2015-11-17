@@ -1,16 +1,15 @@
-body{ background: #000000}
-.widget-full{ background:#eee; min-height: 100px;}
+/*.widget-full{ background:#eee; min-height: 100px;}
 .main .page-header{ margin: 0; padding: 10px 0; font-size: 16px; font-weight: bold; border-bottom: 1px solid #E4E2E2;}
 
 .widget-row { margin-bottom: 20px;}
 
 
 /* Alert container */
-.alert-box-container {  position: absolute; bottom: 20px; min-height: 200px; right: 0; width: 500px;  color: #fff; padding: 20px; box-shadow: 2px 2px 1px #353535;}
+/*.alert-box-container {  position: absolute; bottom: 20px; min-height: 200px; right: 0; width: 500px;  color: #fff; padding: 20px; box-shadow: 2px 2px 1px #353535;}
 .alert--danger{ background: #BA3F3F; }
 .alert--warning{ background: #CA7F1B; }
 .alert--success{ background: #359949}
 
 .alert-header{ margin: 0; padding: 10px 0; text-transform: uppercase; font-weight: bold; text-shadow: 2px 2px 1px #333;}
 
-.hide{ display: none}
+.hide{ display: none}*/
