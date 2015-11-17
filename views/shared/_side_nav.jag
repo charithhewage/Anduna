@@ -7,7 +7,8 @@
             <img alt="image" class="img-circle" src="assets/images/profiles/nadeesha.jpg" />
           </span>
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Nadeesha Weerasooriya</strong>
+            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">
+              <%= current_user.first_name %> <%= current_user.last_name %></strong>
             </span> <span class="text-muted text-xs block">Admin <b class="caret"></b></span> </span> 
           </a>
       
