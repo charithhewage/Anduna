@@ -1,6 +1,7 @@
 <%
 var dirr, ctrl, current_user, current_url;
 var controller = '../controllers/';
+var widgetPath = '../lib/modules/';
 
 (function () {
 
@@ -11,6 +12,7 @@ var controller = '../controllers/';
 
   var originalURI = request.getRequestURI();
   var uriMatcher = new URIMatcher(originalURI);
+
 
   current_url = originalURI;
 

@@ -1,7 +1,15 @@
-<div id="statsBar"></div>
+<div id="statsBar">
+	<div class="row">
+		<%
+		(function() {
+			for (var key in data.enabled_stats_gadgets) {
+			  if (data.enabled_stats_gadgets.hasOwnProperty(key)) {
+			    include('../' + widgetPath + key + '/index.jag')
+				}
+			}
+		} ()); 
+		%>	
+	</div>
+</div>
 <div id="gadgetsContainer"></div>
 <div id="gadgetsSliderContainer"></div>
-
-<script type="text/javascript">
-	
-</script>
