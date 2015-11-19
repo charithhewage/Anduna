@@ -42,19 +42,8 @@
   <script src="assets/js/inspinia.js"></script>
   <script src="assets/js/plugins/pace/pace.min.js"></script>
   
-  <script src="assets/js/charts/draw_404_bar_chart.js"></script>
-  <script src="assets/js/charts/draw_404_pie_chart.js"></script>
-  <script src="assets/js/charts/draw_imortant_file_access_bar_chart.js"></script>
-  <script src="assets/js/charts/draw_important_file_access_pie_chart.js"></script>
-  <script src="assets/js/charts/draw_access_charts.js"></script>
-  <script src="assets/js/charts/draw_data_access_charts.js"></script>
-  
 
-  <script src="assets/js/dao/get_404_request_data_grp_by_id.js"></script>
-  <script src="assets/js/dao/get_and_show_404_request_data.js"></script>
-  <script src="assets/js/dao/get_data_grp_by_ip.js"></script>
-  <script src="assets/js/dao/get_and_show_important_file_access_data.js"></script>
-  <script src="assets/js/dao/hit_summary.js"></script>
+
   
   <!-- Data Tables -->
   <script src="assets/js/plugins/dataTables/jquery.dataTables.js"></script>
@@ -64,55 +53,41 @@
     
     
 <script type='text/javascript'>
-     
-/** load includes **/
-
+    
 $(document).ready(function(){ 
-//$.get("include/sidebar.jag", function(data) {
-  //$("#sidebar").html(data);
-//});
-//$.get("include/page_header.jag", function(data) {
-  //$("#header").html(data);
-//});
-
-//$.get("include/page_footer.jag", function(data) {
-  //$("#footer").html(data);
-//});
-  
-  
 /** on page load **/
   
-  $.get("pages/home_page.jag", function(data) {
-      $("#content").html(data);
-    });
+  //$.get("pages/home_page.jag", function(data) {
+  //    $("#content").html(data);
+  //  });
 
 
   /** menu functions **/
     
     $("#menu_item_1").click(function(){
-        $.get("pages/home_page.jag", function(data) {
-      $("#content").html(data);
-    });
+      $.get("pages/home_page.jag", function(data) {
+        $("#content").html(data);
+      });
     });
     $("#menu_item_2").click(function(){
-        $.get("pages/security.jag", function(data) {
-      $("#content").html(data);
-    });
+      $.get("pages/security.jag", function(data) {
+        $("#content").html(data);
+      });
     });
     $("#menu_item_3.1").click(function(){
-        $.get("pages/alert_list.jag", function(data) {
-      $("#content").html(data);
-    });
+      $.get("pages/alert_list.jag", function(data) {
+        $("#content").html(data);
+      });
     });
     $("#menu_item_3.2").click(function(){
-        $.get("pages/actions_taken.jag", function(data) {
-      $("#content").html(data);
-    });
+      $.get("pages/actions_taken.jag", function(data) {
+        $("#content").html(data);
+      });
     });
     $("#menu_item_3.3").click(function(){
-        $.get("pages/system_improvements.jag", function(data) {
-      $("#content").html(data);
-    });
+      $.get("pages/system_improvements.jag", function(data) {
+        $("#content").html(data);
+      });
     });
     
     
@@ -132,7 +107,9 @@ $(document).ready(function(){
         <%= include("../shared/_header.jag") %>
       </div>
       
-      <div id="content"></div>
+      <div id="content">
+        <%= include('../' + data.container_path + '.jag')%>
+      </div>
       
       <div id="footer">
         <%= include("../shared/_footer.jag") %>

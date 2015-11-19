@@ -2,6 +2,7 @@
 (function() {
 
   if(current_user){
+  data = { container_path: 'home/index'}
    include("../views/layouts/application.jag")  
   }
   else{
