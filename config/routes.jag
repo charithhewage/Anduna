@@ -2,6 +2,7 @@
 var dirr, ctrl, current_user, current_url;
 var controller = '../controllers/';
 var widgetPath = '../lib/modules/';
+var db, result;
 
 (function () {
 
@@ -13,6 +14,8 @@ var widgetPath = '../lib/modules/';
   var originalURI = request.getRequestURI();
   var uriMatcher = new URIMatcher(originalURI);
 
+  require_db = require('config.jag');
+  db = require_db.db_connect
 
   current_url = originalURI;
 
@@ -58,8 +61,7 @@ var widgetPath = '../lib/modules/';
     response.sendError(404, 'requested resource cannot be found');
     return;
   }
-  //response.contentType()
-  //vars.ctrl == 'assets' ? '' : include(controller);
+
   include(controller);
 
 }());

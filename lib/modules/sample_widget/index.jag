@@ -1,0 +1,28 @@
+<div class="col-md-2_new col-md-2">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Threats</h5>
+            <div class="ibox-tools">
+                <span class="label label-primary">Updated 14.07.2015</span>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div>
+                <h1 class="no-margins">38</h1>
+                <small>Yesterday</small>
+                <h4 class="no-margins">30</h4>
+                <small style="color:#7FFF00">4.32%</small>
+            </div>
+            
+            <div id="more4"><a class="btn-more-infor btn btn-default btn-rounded" href="#">More</a></div>
+        </div>
+         <div id="panel4" class="ibox-content" style="display: none;">
+            
+            <small></small><br>
+            <small></small><br>
+            <small></small><br>
+            <small></small>
+        </div>
+
+    </div>
+</div>

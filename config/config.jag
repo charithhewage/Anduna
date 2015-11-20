@@ -1,11 +1,19 @@
 <%
-try {
+//database confugeration
+var log = new Log();
+log.info("PL Access Summary - Max visit site");
 
+try {
+	var db_configs = require('database.json');
   config = {};
-  var db = new Database("jdbc:mysql://localhost:3306/Dshbd", "root", "123123", config); 
+
+  //var db = new Database("jdbc:mysql://localhost:3306/db_name", "root", "123123", config);	
+  var db_connect = new Database("jdbc:mysql://" + db_configs.hostname + ":" + db_configs.port + "/" +db_configs.db_name, db_configs.user, db_configs.password, config);
+ 
 }
 catch(e)  {
   print(e.toString());
 }
+
 
 %>

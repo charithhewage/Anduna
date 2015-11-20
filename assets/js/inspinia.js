@@ -111,7 +111,8 @@ $(document).ready(function () {
 	var timeout;
     var isHidden = false;
 
-    document.addEventListener("mousemove", magicMouse);
+    //remove comment to enable magicMouse
+    //document.addEventListener("mousemove", magicMouse);
 
     function magicMouse() {
     if (timeout) {
