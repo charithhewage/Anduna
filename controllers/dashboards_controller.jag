@@ -10,15 +10,7 @@
       container_path: 'home/index', 
       enabled_stats_gadgets: enabled_stats_gadgets,
     };
-
-    // for (var key in enabled_stats_gadgets) {
-    //   if (enabled_stats_gadgets.hasOwnProperty(key)) {
-    //       print(key + '--');
-    //       print(enabled_stats_gadgets[key]);
-    //       print('<br>')
-    //   }
-    // }
-
+  
   
     include("../views/layouts/application.jag");  
   }

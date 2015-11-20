@@ -1,0 +1,21 @@
+<%
+var log = new Log();
+log.info("PL Access Summary - Max visit site");
+
+try{
+
+  var result = db.query("SELECT DISTINCT * FROM PL_AccessSummary");
+  log.info(result);
+  response.contentType = "application/json";
+  response.characterEncoding = "UTF-8";
+  response.content = result;
+}
+catch(e){
+    print(e.toString()); // TODO: use log.info instead of printing error
+}
+// finally{
+//     db.close();
+// }
+
+
+%>

@@ -1,3 +1,0 @@
-<%
-print('Hi, <h3> Jaggery </h3>');
-%>

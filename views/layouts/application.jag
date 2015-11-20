@@ -33,8 +33,8 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
   <script src="assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-  <script src="assets/js/d3.tip.js"></script>
   <script src="assets/js/d3.min.js"></script>
+  <script src="assets/js/d3.tip.js"></script>
   
   <!-- Custom and plugin javascript -->
   <script src="assets/js/inspinia.js"></script>
@@ -45,49 +45,9 @@
   <script src="assets/js/plugins/dataTables/dataTables.bootstrap.js"></script>
   <script src="assets/js/plugins/dataTables/dataTables.responsive.js"></script>
   <script src="assets/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
-    
-    
-<script type='text/javascript'>
-    
-$(document).ready(function(){ 
-/** on page load **/
-  
-  //$.get("pages/home_page.jag", function(data) {
-  //    $("#content").html(data);
-  //  });
+  <script src="assets/js/slidedown.js"></script>
 
-
-  /** menu functions **/
-    
-    $("#menu_item_1").click(function(){
-      $.get("pages/home_page.jag", function(data) {
-        $("#content").html(data);
-      });
-    });
-    $("#menu_item_2").click(function(){
-      $.get("pages/security.jag", function(data) {
-        $("#content").html(data);
-      });
-    });
-    $("#menu_item_3.1").click(function(){
-      $.get("pages/alert_list.jag", function(data) {
-        $("#content").html(data);
-      });
-    });
-    $("#menu_item_3.2").click(function(){
-      $.get("pages/actions_taken.jag", function(data) {
-        $("#content").html(data);
-      });
-    });
-    $("#menu_item_3.3").click(function(){
-      $.get("pages/system_improvements.jag", function(data) {
-        $("#content").html(data);
-      });
-    });
-    
-    
-});
-</script>
+  <script src="assets/js/navigations.js"></script>
 
 </head>
 

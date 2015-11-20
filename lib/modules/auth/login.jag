@@ -1,0 +1,66 @@
+<%
+
+
+(function () {
+	var email;
+	var password;
+	var data;
+
+	setLogin = function(){
+		//return password;
+		if(request.getMethod() === 'POST') {
+
+			email = request.getParameter('email')
+			password = request.getParameter('password')
+		
+			result = db.query('SELECT * FROM  users WHERE email ='+ stringify(email) +' and password='+ stringify(utils.toMD5(password))+ 'LIMIT 1')
+			
+			if(result[0]){
+				var obj = {
+		    	first_name  : result[0].first_name,
+		    	last_name   : result[0].last_name,
+		    	email       : result[0].email,
+		    	role        : result[0].role,
+		    };
+		  	session.put("user", obj);
+		  	
+		  	
+		  	data = { 	state: true, 
+									msg: "Login success" }
+
+			}
+			else
+			{
+				data = { 	state: false, 
+									msg: "Username or Password may be incorrect" }
+			}// end check user from db
+
+
+		}
+		else{
+			data = { 	state: false, 
+								msg: "Method is not allowd to this action" }
+		}
+
+		return data;
+	}
+
+
+
+  
+
+
+	// try{
+	// 	if(db){
+
+	// 	}
+	// 	var result = db.query("SELECT * FROM PL_AccessSummary")
+	// 	print(result);
+
+	// }catch(e){
+	// 	 print(e.toString());
+	// }
+
+}() ) 
+
+%>

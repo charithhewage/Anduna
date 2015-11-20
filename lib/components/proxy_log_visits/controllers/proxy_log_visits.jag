@@ -1,0 +1,23 @@
+<%
+(function(){
+
+var log = new Log();
+log.info("PL Daily Summary");
+
+try{
+
+  var result = db.query("SELECT * FROM PL_DailySummary");
+  log.info(result);
+  response.contentType = "application/json";
+  response.characterEncoding = "UTF-8";
+  response.content = result;
+}
+catch(e){
+  print(e.toString()); // TODO: use log.info instead of printing error
+}
+
+
+}() )
+
+
+%>

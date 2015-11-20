@@ -1,25 +1,17 @@
 <%
 (function() {
-  include("gadgets_controller.jag");
+	include("gadgets_controller.jag");
 
   //FIX-ME get user details from utils
   current_user = session.get('user')
 
   if(current_user){
     data = { 
-      container_path: 'home/index', 
+      container_path: 'securities/index', 
       enabled_stats_gadgets: enabled_stats_gadgets,
     };
-
-    // for (var key in enabled_stats_gadgets) {
-    //   if (enabled_stats_gadgets.hasOwnProperty(key)) {
-    //       print(key + '--');
-    //       print(enabled_stats_gadgets[key]);
-    //       print('<br>')
-    //   }
-    // }
-
   
+
     include("../views/layouts/application.jag");  
   }
   else{

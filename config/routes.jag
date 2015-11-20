@@ -1,7 +1,11 @@
 <%
-var dirr, ctrl, current_user, current_url;
+var root_dir, ctrl, current_user, current_url, utils;
 var controller = '../controllers/';
-var widgetPath = '../lib/modules/';
+var widgetPath = '../lib/components/';
+var modulePath = '../lib/modules/';
+
+var setLogin;
+
 var db, result;
 
 (function () {
@@ -13,30 +17,21 @@ var db, result;
 
   var originalURI = request.getRequestURI();
   var uriMatcher = new URIMatcher(originalURI);
+  utils = require('initializers/utils.js')
 
   require_db = require('config.jag');
   db = require_db.db_connect
 
+  /*** Include core Modules  **/
+  include(modulePath + 'auth/login.jag')
+
+  /*** /Include core Modules  **/
+
   current_url = originalURI;
-
-  // Check current user
-  currentUser = function(){
-    var obj = {
-      first_name  : "Charith",
-      last_name   : "Lakmina",
-      email       : "charithhewage@gmail.com",
-      role        : 1,
-    };
-    session.put("user", obj);
-    //session.remove('user');
-
-    user = session.get("user");
-    return user;
-  }
-  current_user = currentUser();
 
   if (uriMatcher.match('/{dirr}') || uriMatcher.match('/{dirr}/')) {
     vars = uriMatcher.elements();
+    root_dir = vars.dirr
     urlDomain = vars.domain;
     //relativeURI = originalURI.match(/.*\/$/ig) ? '/' : '';
     controller += root + '_controller.jag';
@@ -44,16 +39,18 @@ var db, result;
 
   else if (uriMatcher.match('/{dirr}/{ctrl}') || uriMatcher.match('/{dirr}/{ctrl}/')) {
     vars = uriMatcher.elements();
+    root_dir = vars.dirr
     urlDomain = vars.domain;
     //relativeURI = '/' + vars.ctrl;
-    vars.ctrl == 'assets' ? controller = '../' + vars.ctrl + '/' + vars.any : controller += vars.ctrl + '_controller.jag';
+    vars.ctrl == 'assets' || vars.ctrl == 'lib' ? controller = '../' + vars.ctrl + '/' + vars.any : controller += vars.ctrl + '_controller.jag';
     //print(controller)
   } 
 
   else if (uriMatcher.match('/{dirr}/{ctrl}/{+any}')) {
     vars = uriMatcher.elements();
+    root_dir = vars.dirr
     //relativeURI = originalURI.match(/.*\/$/ig) ? '/' : vars.any;
-    vars.ctrl == 'assets' ? controller = '../' + vars.ctrl + '/' + vars.any : controller += vars.ctrl + '_controller.jag';
+    vars.ctrl == 'assets' || vars.ctrl == 'lib' ? controller = '../' + vars.ctrl + '/' + vars.any : controller += vars.ctrl + '_controller.jag';
     //print(controller)
   } 
 
@@ -61,7 +58,6 @@ var db, result;
     response.sendError(404, 'requested resource cannot be found');
     return;
   }
-
   include(controller);
 
 }());

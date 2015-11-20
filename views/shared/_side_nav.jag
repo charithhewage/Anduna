@@ -27,11 +27,11 @@
       </li>
 
       <li id="menu_item_1">
-        <a href="#"><i class="fa fa2 fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
+        <a href="dashboards"><i class="fa fa2 fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
       </li>
 
       <li id="menu_item_2">
-        <a href="#"><i class="fa fa2 fa-check"></i> <span class="nav-label">Security</span></a>
+        <a href="securities"><i class="fa fa2 fa-check"></i> <span class="nav-label">Security</span></a>
       </li>
       
       <li>

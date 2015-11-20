@@ -1,9 +1,10 @@
 <%
 (function() {
   enabled_stats_gadgets = {	
-  	server_access_summary	: "Server Access Summary",
-  	request_summary				: "Request Summery",
-  	sample_widget 				: "Sample"
+  	proxy_log_visits :	"Proxy Log Visits"
+  	//server_access_summary	: "Server Access Summary",
+  	//request_summary				: "Request Summery",
+  	//sample_widget 				: "Sample"
 	}
   //enabled_preview_widgets = {"widget_1", "widget_2", "widget_3"}
 
