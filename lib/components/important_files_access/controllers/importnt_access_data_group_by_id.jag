@@ -1,0 +1,22 @@
+<%
+var log = new Log();
+log.info("Access Summary Server get details grup by id");
+
+
+try{
+
+    var result = db.query("SELECT clientIpAddress, COUNT(date_time) AS totalcount FROM AL_LastHourImportantFileAccessInfo GROUP BY clientIpAddress ");
+ //print(result);
+    response.contentType = "application/json";
+    response.characterEncoding = "UTF-8";
+    response.content = result;
+}
+catch(e){
+    print(e.toString()); // TODO: use log.info instead of printing error
+}
+finally{
+    db.close();
+}
+
+
+%>

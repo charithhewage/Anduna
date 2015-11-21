@@ -61,6 +61,11 @@
 	// 	 print(e.toString());
 	// }
 
+	destroyLogin = function(){
+		session.remove("user");
+		
+	}
+
 }() ) 
 
 %>

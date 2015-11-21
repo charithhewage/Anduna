@@ -7,9 +7,8 @@
 
   <title>Dashboard</title>
 
-  
-  <link href="assets/css/bootstrap/bootstrapOverride.css" rel="stylesheet">
   <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap/bootstrapOverride.css" rel="stylesheet">
   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="assets/font-awesome/css/font-awsome-override.css" rel="stylesheet">
   <!-- Morris -->
@@ -22,20 +21,30 @@
   <link href="assets/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
   <link href="assets/css/plugins/dataTables/dataTables.responsive.css" rel="stylesheet">
   <link href="assets/css/plugins/dataTables/dataTables.tableTools.min.css" rel="stylesheet">
+  
+  <!-- resizable DIV -->
+  <link href="assets/css/resize/resize.css" rel="stylesheet">
 
-   <!-- link to magicslideshow.css file -->
-   <link rel="stylesheet" type="text/css" href="assets/css/plugins/magicslideshow/magicslideshow.css" media="screen"/>
-   <!-- link to magicslideshow.js file -->
-   <script src="assets/js/plugins/magicslideshow/magicslideshow.js" type="text/javascript"></script>
-   
-   <!-- Mainly scripts -->
+  <!-- link to magicslideshow.css file -->
+  <link rel="stylesheet" type="text/css" href="assets/css/plugins/magicslideshow/magicslideshow.css" media="screen"/>
+  
+  <!-- make divs draggable -->
+  <script src="assets/js/drag/drag.js"></script>
+
+  <!-- Mainly scripts -->
   <script src="assets/js/jquery-2.1.1.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
   <script src="assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
   <script src="assets/js/d3.min.js"></script>
   <script src="assets/js/d3.tip.js"></script>
+
+
   
+  <!-- link to magicslideshow.js file -->
+  <script src="assets/js/plugins/magicslideshow/magicslideshow.js" type="text/javascript"></script>
+   
+
   <!-- Custom and plugin javascript -->
   <script src="assets/js/inspinia.js"></script>
   <script src="assets/js/plugins/pace/pace.min.js"></script>
@@ -54,25 +63,37 @@
 <body>
   <div id="wrapper">
     <div id="sidebar">
-      <%= include("../shared/_side_nav.jag") %>
+      
+      <% 
+      include("../shared/_side_nav.jag") 
+      %>
+
     </div>
     
     <div id="page-wrapper" class="gray-bg">
       <div id="header">
-        <%= include("../shared/_header.jag") %>
+        <% 
+        include("../shared/_header.jag") 
+        %>
       </div>
       
       <div id="content">
-        <%=  include('../' + data.container_path + '.jag') %>
+        <%
+        include('../' + data.container_path + '.jag') 
+        %>
       </div>
       
       <div id="footer">
-        <%= include("../shared/_footer.jag") %>
+        <%
+        include("../shared/_footer.jag") 
+        %>
       </div>
     </div>
     
     <div id="alert_bar">
-      <%= include("../shared/_alerts_container") %>
+      <%
+      include("../shared/_alerts_container") 
+      %>
     </div>
   </div>
 

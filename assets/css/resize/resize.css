@@ -1,0 +1,4 @@
+.resizable {
+		    resize: both;   /* Options: horizontal, vertical, both */
+		    overflow: auto; /* fix for Safari */
+		}

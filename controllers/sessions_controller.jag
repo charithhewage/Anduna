@@ -1,15 +1,39 @@
 <%
-(function() {
 
-  result = setLogin();
-  
-	if (result.state === true){
+var SessionsController = function(){
+	
+	this.login = function(){
+		result = setLogin();
+		if (result.state === true){
+			response.sendRedirect('../../' + root_dir)
+		}
+		else{
+			response.sendRedirect('../../' + root_dir)
+		}
+
+		print("login")
+	}
+
+	this.destroy =  function(){
+		session.remove("user");
 		response.sendRedirect('../../' + root_dir)
+	}
+
+}
+
+var SessionsController = new SessionsController();
+
+var originalURI = request.getRequestURI();
+var uriMatcher = new URIMatcher(originalURI);
+
+if (uriMatcher.match('/{dirr}/{ctrl}/{method}')) {
+	vars = uriMatcher.elements();
+	if (vars.method == "destroy"){
+		SessionsController.destroy()
 	}
 	else{
-		response.sendRedirect('../../' + root_dir)
+		SessionsController.login()
 	}
-
-} ()); 
+}
 
 %>

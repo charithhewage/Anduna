@@ -11,7 +11,6 @@
         </div>
       </form>
     </div>
-    
     <ul class="nav navbar-top-links navbar-right">
       <li>
         <span class="m-r-sm text-muted welcome-message">Welcome to the Dashboard</span>
@@ -121,7 +120,7 @@
 
 
         <li>
-          <a href="login.html">
+          <a href="sessions/destroy">
             <i class="fa fa-sign-out"></i> Log out
           </a>
         </li>
