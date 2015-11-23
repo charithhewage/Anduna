@@ -13,9 +13,9 @@ try{
 catch(e){
     print(e.toString()); // TODO: use log.info instead of printing error
 }
-// finally{
-//     db.close();
-// }
+finally{
+     db.close();
+}
 
 
 %>
