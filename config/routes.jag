@@ -14,6 +14,8 @@ var db, result;
   var root = 'home';
   
   var log = new Log();
+  
+  var whitelistedURI = ["assets", "lib"]
 
   var originalURI = request.getRequestURI();
   var uriMatcher = new URIMatcher(originalURI);
