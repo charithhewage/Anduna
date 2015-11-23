@@ -17,7 +17,7 @@
                                 </li>
                                 <li><a href="#" onClick="show_today_unique_visits()">Today Unique Visits</a>
                                 </li>
-                                <li><a href="#" onClick="get_pl_max_visit()">Highest Visited Site</a>
+                                <li><a href="#" onClick="show_today_max_visits()">Highest Visited Site</a>
                                 </li>
                                 <li><a href="#" onClick="show_today_failed_visits()">Today Failed Visits</a>
                                 </li>
