@@ -1,7 +1,7 @@
 <%
 //database confugeration
 var log = new Log();
-log.info("PL Access Summary - Max visit site");
+log.info("database confugeration jag");
 
 try {
 	var db_configs = require('database.json');
