@@ -38,8 +38,35 @@
       </div>
     </div>
 
-    <div id="elem" class="ibox-content resizable">
+    <div id="importnat_file_access_div" class="ibox-content resizable">
       <div id="chart2" style="min-height:150px"></div>
+      <!-- info modal load -->
+          <div id="importnat_file_access_modal" class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Chart Info</h4>
+                  </div>
+                  <div id="importnat_file_access_modal_content" class="modal-body">
+                    <h3 class="clientIp" >Some text in the modal.</h2>
+                    <p class="date"></p>
+                    <p class="time"></p>
+                    <p class="url"></p>
+                    <p class="browser"></p>
+                    <p class="size"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <!-- modal end -->
+  
     </div>
   </div>
 </div>

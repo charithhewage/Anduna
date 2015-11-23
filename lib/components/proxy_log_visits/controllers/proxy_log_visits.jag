@@ -1,6 +1,4 @@
 <%
-(function(){
-
 var log = new Log();
 log.info("PL Daily Summary");
 
@@ -16,8 +14,6 @@ catch(e){
   print(e.toString()); // TODO: use log.info instead of printing error
 }
 
-
-}() )
 
 
 %>

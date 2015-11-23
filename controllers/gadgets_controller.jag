@@ -5,7 +5,8 @@
   	important_files_access :	"Important Files Access",
   	//server_access_summary	: "Server Access Summary",
   	//request_summary				: "Request Summery",
-  	//sample_widget 				: "Sample"
+  	//sample_widget 				: "Sample",
+  	attack_404 : "404 attack"
 	}
   //enabled_preview_widgets = {"widget_1", "widget_2", "widget_3"}
 
