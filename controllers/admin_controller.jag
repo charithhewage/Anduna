@@ -1,0 +1,38 @@
+<%
+
+(function() {
+  include("gadgets_controller.jag");
+
+  //FIX-ME get user details from utils
+  current_user = session.get('user')
+
+  if(current_user){
+    data = { 
+      container_path: 'home/index', 
+      enabled_stats_gadgets: enabled_stats_gadgets,
+    };
+
+    // for (var key in enabled_stats_gadgets) {
+    //   if (enabled_stats_gadgets.hasOwnProperty(key)) {
+    //       print(key + '--');
+    //       print(enabled_stats_gadgets[key]);
+    //       print('<br>')
+    //   }
+    // }
+
+  
+    include("../views/layouts/application.jag");  
+  }
+  else{
+    // FIX-ME Redirect to sessions_controller and check user availability.
+    //response.sendRedirect(current_url + 'sessions/');
+    data = { container_path: 'users/sessions/new'};
+    include("../views/layouts/no_user.jag");
+  }
+
+  
+
+} ()); 
+
+
+%>
