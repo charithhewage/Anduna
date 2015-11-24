@@ -1,0 +1,59 @@
+<script src="lib/components/bandwidth_summary/assets/js/dao.js"></script>
+<script src="lib/components/bandwidth_summary/assets/js/charts/draw_bandwidth_charts.js"></script>
+
+<div class="col-md-2_new col-md-2">
+                <div class="ibox float-e-margins">
+                    <div id="type3"class="ibox-title">
+                        <h5>Bandwidth</h5>
+                        <span class="label label-primary pull-right">Today Bandwidth</span>    
+                        <div class="ibox-tools">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#" onClick="show_total_bandwidth()">Today Bandwidth</a>
+                                </li>
+                                <li><a href="#" onClick="show_average_incoming_bandwidth()">Average Incoming Bandwidth</a>
+                                </li>
+                                <li><a href="#" onClick="show_average_outgoing_bandwidth()">Average Outgoing Bandwidth</a>
+                                </li>
+                                <li><a href="#" onClick="show_incoming_bandwidth()">Incoming Bandwidth</a>
+                                </li>
+                                <li><a href="#" onClick="show_outgoing_bandwidth()">Outgoing Bandwidth</a>
+                                </li>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div id="bandwidth" >
+                            <h1 class="no-margins">220</h1>
+                            <small>Yesterday</small>
+                            <h4 class="no-margins">210</h4>
+                            <h3 style="color:#7FFF00">4.32%</h3>
+                        </div>
+                        
+                        <div id="more3"><a class="btn-more-infor btn btn-default btn-rounded" href="#">More</a></div>
+                    </div>
+                    <div id="panel3" class="ibox-content" style="display: none;">
+                        
+                        <span>Total Bandwidth Graph</span>
+                        <div class="ibox-tools">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#" onClick="show_today_visits()">Bar Chart</a>
+                                </li>
+                                <li><a href="#" onClick="show_average_visits()">Pie Chart</a>
+                                </li>
+                            </ul>
+                            </br>
+                        </div>
+                        <div id="bandwidthChart" style="height:100px">
+                    
+                        </div>
+
+                    </div>
+                </div>
+            </div>
