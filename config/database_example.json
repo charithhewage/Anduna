@@ -1,7 +1,0 @@
-{
-	hostname:	"localhost",
-	port: 		3306,
-	db_name: 	"dashboard-v-0-1",
-	user: 		"root",
-	password:	"xxx"
-}

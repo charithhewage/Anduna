@@ -3,14 +3,7 @@
 var SessionsController = function(){
 	
 	this.login = function(){
-		result = setLogin();
-		if (result.state === true){
-			response.sendRedirect('../../' + root_dir)
-		}
-		else{
-			response.sendRedirect('../../' + root_dir)
-		}
-
+		
 		print("login")
 	}
 

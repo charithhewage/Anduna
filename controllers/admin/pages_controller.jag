@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard</title>
+
+  <link href="assets/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap/bootstrapOverride.css" rel="stylesheet">
+  <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="assets/font-awesome/css/font-awsome-override.css" rel="stylesheet">
+
+  
+  <!-- make divs draggable -->
+  <script src="assets/js/drag/drag.js"></script>
+
+  <!-- Mainly scripts -->
+  <script src="assets/js/jquery-2.1.1.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="sidebar">
+      
+      <div class="row">
+       <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+      </div>
+
+    </div>
+    
+    <div id="page-wrapper" class="gray-bg">
+      <div id="header">
+        
+      </div>
+      
+      <div id="content">
+        
+      </div>
+      
+      <div id="footer">
+        
+      </div>
+    </div>
+    
+    <div id="alert_bar">
+      
+    </div>
+  </div>
+
+</body>
+</html>

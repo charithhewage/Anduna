@@ -10,7 +10,7 @@
 <link href="assets/font-awesome/css/font-awsome-override.css" rel="stylesheet">
 
 <link href="assets/css/animate.css" rel="stylesheet">
-<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/style.min.css" rel="stylesheet">
 
 </head>
 <body class="gray-bg">
