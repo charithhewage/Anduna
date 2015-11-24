@@ -1,5 +1,6 @@
 <script src="lib/components/proxy_log_visits/assets/js/dao.js"></script>
 <script src="lib/components/proxy_log_visits/assets/js/charts/draw_visits_chart.js"></script>
+<script src="lib/components/proxy_log_visits/assets/js/charts/draw_pie_chart.js"></script>
 
 <div class="col-md-2_new col-md-2">
                 <div class="ibox float-e-margins">
@@ -46,7 +47,7 @@
                             <ul class="dropdown-menu dropdown-user">
                                 <li><a href="#" onClick="show_today_visits()">Bar Chart</a>
                                 </li>
-                                <li><a href="#" onClick="show_average_visits()">Pie Chart</a>
+                                <li><a href="#" onClick="drawTodayVisitsPieChart()">Pie Chart</a>
                                 </li>
                             </ul>
                             </br>
