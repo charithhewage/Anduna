@@ -4,7 +4,7 @@
   	proxy_log_visits :	"Proxy Log Visits",
   	important_files_access :	"Important Files Access",
   	access_log_hits : "Access Log Hits ",
-  	//server_access_summary	: "Server Access Summary",
+  	bandwidth_summary	: "Bandwidth Summary",
   	//request_summary				: "Request Summery",
   	//sample_widget 				: "Sample"
 	}
