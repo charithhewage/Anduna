@@ -24,9 +24,9 @@
         </a>
         
         <ul class="dropdown-menu dropdown-user">
-          <li><a href="#" onClick="get_data_grup_by_ip(1)">Show Bar Chart </a>
+          <li><a href="#" onClick="get_data_grup_by_ip(1)">Access Count based on IP - Bar Cahrt </a>
         </li>
-          <li><a href="#" onClick="get_data_grup_by_ip(2)">Show Pie Chart </a>
+          <li><a href="#" onClick="get_data_grup_by_ip(2)">Access Count based on IP - Pie Chart </a>
           </li>
           <li><a href="#" onClick="showimportantFileAccessAlData()">Show Full Log File </a>
           </li>
@@ -51,12 +51,15 @@
                     <h4 class="modal-title">Chart Info</h4>
                   </div>
                   <div id="importnat_file_access_modal_content" class="modal-body">
-                    <h3 class="clientIp" >Some text in the modal.</h2>
+                  <table>
+                    <tr><td><h4><strong>Ip Address&nbsp;&nbsp;</strong></h4></td><td><p>:&nbsp;&nbsp;</p></td><td><h4 class="clientIp" >no data</h4></td></tr>
+                    <tr><td><p><strong>Access Count&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="count"></p></tr> 
+                    <tr><td><strong>Request Data Size&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="size"></p></td></tr>
+                    <tr><td><p><strong>Browser&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="browser"></p></td></tr>
+                    <tr><td><p><strong>Operating System&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="os"></p></td></tr>
+                    <p class=""></p>
                     <p class="date"></p>
-                    <p class="time"></p>
-                    <p class="url"></p>
-                    <p class="browser"></p>
-                    <p class="size"></p>
+                    </table>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
