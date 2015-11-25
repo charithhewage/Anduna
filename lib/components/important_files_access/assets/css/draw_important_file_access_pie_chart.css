@@ -1,13 +1,22 @@
 
 
 polyline{
-	opacity: .3;
+	opacity: .6;
 	stroke: black;
 	stroke-width: 2px;
 	fill: none;
 }
 
+text{
+     opacity: .8;
+
+}
 
 path.slice{
 	stroke-width:2px;
+}
+
+path{
+
+	opacity: .8;
 }
