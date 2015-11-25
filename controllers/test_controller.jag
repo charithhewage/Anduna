@@ -1,0 +1,7 @@
+<%
+(function(){
+
+include("../views/index.jag");
+}())
+
+%>

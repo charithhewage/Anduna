@@ -1,95 +1,103 @@
 <%
-var relevantController;
 var root = "home";
-var root_dir, ctrl, current_user, current_url, utils;
+var root_dir, utils;
 var widgetPath = '../lib/components/';
 var modulePath = '../lib/modules/';
 
-var setLogin;
-
 var db, result;
-
 
 var log = new Log();
 
 (function(){
   
   var result;
+  var requestedController;
   var whitelistedURI = ["assets", "lib"]
   var controllerPath;
 
   var originalURI = request.getRequestURI();
   var uriMatcher = new URIMatcher(originalURI);
 
-  //utils = require('initializers/utils.js')
+  utils = require('initializers/utils.js')
 
-  //require_db = require('config.jag');
-  //db = require_db.db_connect
+  require_db = require('config.jag');
+  db = require_db.db_connect
 
   /*** Include core Modules  **/
-  //include(modulePath + 'auth/login.jag')
+  include(modulePath + 'auth/login.jag')
 
   /*** /Include core Modules  **/
 
-  current_url = originalURI;
+  //current_url = originalURI;
 
-  
+  //Identifying the correct controller
+  //for root
   if(uriMatcher.match('/{dirr}/{+any}')){
     vars = uriMatcher.elements();
     root_dir = vars.dirr
   }
-  
 
-  current_url = originalURI;
+  var ContextPath = request.getContextPath()
 
-  var newWhitelistedURI;
-  var isWhitelisted = false;
+  var splitedURI = originalURI.split("/");
+  splitedURI.push("", "", "")
+
+  if(splitedURI[2] == ""){
+    requestedController = "../controllers/" + root + '_controller.jag'
+  }
+  else{
+    setController()
+  }
   
-  for each (var item in whitelistedURI) {
-    if(originalURI.match('(.*)(' + item + ')(\/)(.*)')){
-      newWhitelistedURI = originalURI.replace(new RegExp('(.*)(' + item + ')(\/)(.*)'), '$2$3$4')
-      isWhitelisted = true
-      controllerPath = "../" + newWhitelistedURI
-    }
-    else{}
+  function setController(){
     
-  }
-  var regex = new RegExp('(.*/)([0-9a-zA-Z]+)(\/)([0-9a-zA-Z]+)(\/)([0-9a-zA-Z]+)(\/)([0-9a-zA-Z]+)(\/)(.*)') 
+    var assetsURI
+    var isWhitelisted = false
 
-  if(originalURI.match(regex) && isWhitelisted == false ){
+    for each (var item in whitelistedURI) {
+      if(originalURI.match('(.*)(' + item + ')(\/)(.*)')){
+        assetsURI = originalURI.replace(new RegExp('(.*)(' + item + ')(\/)(.*)'), '$2$3$4')
+        requestedController = "../" + assetsURI
+        isWhitelisted = true
+        log.info("called to assets")
+        log.info(requestedController)
+        break;
+      }
+    }
 
-    var context1 = originalURI.replace(regex, '$4')
-    var context2 = originalURI.replace(regex, '$6')
-    var context3 = originalURI.replace(regex, '$8')
-    controllerPath = findFile(context1, context2, context3)
-  }
+    isWhitelisted == false ? requestedController = findController() : ""
   
-  uriMatcher.match('/{dir}/') ? controllerPath = '../controllers/' + 'home_controller.jag' : ""
-  
+    return requestedController
 
-  controllerPath != undefined ? include(controllerPath) : ""
+  }// setController
 
-  //.*dads\/([0-9a-zA-Z]+)(\/)([0-9a-zA-Z]+)(.*)
-  //(.*/)(dads)(\/)([0-9a-zA-Z]+)(\/)([0-9a-zA-Z]+)(.*)
-  
-  function findFile(x, y, z){
+  function findController(){
     var path = [
-            '/controllers/' + x + "_controller.jag",
-            '/controllers/' + x + "/" + y + "_controller.jag",
-            '/controllers/' + x + "/" + y + "/" + z + "_controller.jag" 
+            '/controllers/' + splitedURI[2] + "_controller.jag",
+            '/controllers/' + splitedURI[2] + "/" + splitedURI[3] + "_controller.jag"
             ]
     for (var i = 0; i < path.length; i++) {
+      
       var file = new File(path[i]);
-
+      
       if (file.isExists()) {
         return path[i];
         break;
       }
+
     };
+
+  }// findController
+
+  //include the controller
+  try{
+    include(requestedController)
+  }catch(e){
+    print(e.toString());
   }
   
 
-}());
+}());// Init function
 
 
 %>

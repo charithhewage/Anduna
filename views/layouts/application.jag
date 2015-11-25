@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 
@@ -15,7 +14,7 @@
   <link href="assets/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
 
   <link href="assets/css/animate.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.min.css" rel="stylesheet">
   
   <!-- Data Tables -->
   <link href="assets/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
@@ -92,7 +91,7 @@
     
     <div id="alert_bar">
       <%
-      include("../shared/_alerts_container") 
+      include("../shared/_alerts_container.jag") 
       %>
     </div>
   </div>
