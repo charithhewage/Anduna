@@ -1,5 +1,7 @@
 <link href="lib/components/important_files_access/assets/css/draw_important_file_access_bar_chart.css" rel="stylesheet">
 
+<link href="lib/components/important_files_access/assets/css/draw_important_file_access_pie_chart.css" rel="stylesheet">
+
 <script src="lib/components/important_files_access/assets/js/dao.js"></script>
 
 <script src="lib/components/important_files_access/assets/js/charts/draw_imortant_file_access_bar_chart.js"></script>
