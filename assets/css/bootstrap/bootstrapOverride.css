@@ -32,3 +32,10 @@
     color: #000000 !important;
 }
 
+.modal-content_chart{
+	max-width: 500px !important;
+}
+
+.btn-modal-chart{
+	background-color: #1ab394 !important;
+}
