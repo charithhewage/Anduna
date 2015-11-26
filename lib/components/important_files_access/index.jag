@@ -4,6 +4,8 @@
 
 <link href="lib/components/important_files_access/assets/css/draw_important_access_data_group_by_browser.css" rel="stylesheet">
 
+<link href="lib/components/important_files_access/assets/css/draw_important_access_data_group_by_request.css" rel="stylesheet">
+
 <script src="lib/components/important_files_access/assets/js/dao.js"></script>
 
 <script src="lib/components/important_files_access/assets/js/charts/draw_imortant_file_access_bar_chart.js"></script>
@@ -11,6 +13,8 @@
 <script src="lib/components/important_files_access/assets/js/charts/draw_important_file_access_pie_chart.js"></script>
 
 <script src="lib/components/important_files_access/assets/js/charts/draw_important_access_data_group_by_browser.js"></script>
+
+<script src="lib/components/important_files_access/assets/js/charts/draw_important_access_data_group_by_request.js"></script>
 
 
 
@@ -37,7 +41,7 @@
           </li>
           <li><a href="#" onClick="get_data_group_by_browser()">Access Count based on Browser </a>
           </li>
-          <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Request Type </a>
+          <li><a href="#" onClick="get_data_group_by_request()">Access Count based on Request Type </a>
           </li>
           <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Date </a>
           </li>
