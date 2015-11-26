@@ -4,7 +4,7 @@
       <li class="nav-header">
         <div class="dropdown profile-element"> 
           <span>
-            <img alt="image" class="img-circle" src="assets/images/profiles/nadeesha.jpg" />
+            <img alt="image" class="img-circle" src="<%= urlPrefix %>assets/images/profiles/nadeesha.jpg" />
           </span>
           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">
@@ -27,11 +27,11 @@
       </li>
 
       <li id="menu_item_1">
-        <a href="dashboards"><i class="fa fa2 fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
+        <a href="<%= urlPrefix %>dashboards"><i class="fa fa2 fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
       </li>
 
       <li id="menu_item_2">
-        <a href="securities"><i class="fa fa2 fa-check"></i> <span class="nav-label">Security</span></a>
+        <a href="<%= urlPrefix %>securities"><i class="fa fa2 fa-check"></i> <span class="nav-label">Security</span></a>
       </li>
       
       <li>

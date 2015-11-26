@@ -1,0 +1,55 @@
+<%
+(function() {
+
+  //FIX-ME get user details from utils
+  current_user = session.get('user')
+
+  if(current_user){
+
+  	var Installedwidgets = require('../'+widgetPath +'/widgets.json')
+
+  	var result = db.query("SELECT * FROM  widgets");
+
+  	for (var key in Installedwidgets) {
+      if (Installedwidgets.hasOwnProperty(key)) {
+
+          var getWidget = getWidgetData(key, result);
+         
+          if(getWidget != undefined){
+          	Installedwidgets[key] = { id: getWidget.id, title: Installedwidgets[key], dir_name: key, state:  getWidget.state}
+          }
+          else{
+          	Installedwidgets[key] = { id: null, title: Installedwidgets[key], dir_name: key, state:  false}
+          }
+      }
+    }
+
+    data = { 
+      container_path: 'admin/widgets/index', 
+      widgets: Installedwidgets,
+    };
+  
+    include("../../views/layouts/application.jag");  
+  }
+  else{
+    // FIX-ME Redirect to sessions_controller and check user availability.
+    //response.sendRedirect(current_url + 'sessions/');
+    data = { container_path: 'users/sessions/new'};
+    include("../views/layouts/no_user.jag");
+  }
+
+  function getWidgetData(widgetName, result){
+  	for (var item in result){
+			if(result[item]['dir_name'] == widgetName){
+				return result[item]
+				break;
+			}
+			else{
+				null
+			}
+		}
+  }
+
+} ()); 
+
+%>

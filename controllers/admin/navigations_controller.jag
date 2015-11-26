@@ -1,0 +1,29 @@
+<%
+(function() {
+
+  //FIX-ME get user details from utils
+  current_user = session.get('user')
+
+  if(current_user){
+  	
+  	var result = db.query("SELECT * FROM  navigations");
+
+    data = { 
+      container_path: 'admin/navigations/index', 
+      navigations: result,
+    };
+  
+    include("../../views/layouts/application.jag");  
+  }
+  else{
+    // FIX-ME Redirect to sessions_controller and check user availability.
+    //response.sendRedirect(current_url + 'sessions/');
+    data = { container_path: 'users/sessions/new'};
+    include("../views/layouts/no_user.jag");
+  }
+
+  
+
+} ()); 
+
+%>

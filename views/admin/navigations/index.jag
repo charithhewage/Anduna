@@ -1,0 +1,18 @@
+<%
+include_once("../shared/_main_nav.jag")
+%>
+
+<%
+(function(){
+print('<div class="row"><div class="list-group col-md-6">')
+
+for (var item in data.navigations){
+	print('<a href="#" class="list-group-item">'+data.navigations[item]['titile']+'</a>') 
+}
+
+print('</div></div>')
+
+}())
+%>
+
+<button type="submit" class="btn btn-success">Create a New Menu</button>

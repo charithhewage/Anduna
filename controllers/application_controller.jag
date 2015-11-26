@@ -1,0 +1,3 @@
+<%
+include("admin/home_controller.jag")
+%>

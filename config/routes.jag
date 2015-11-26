@@ -3,6 +3,7 @@ var root = "home";
 var root_dir, utils;
 var widgetPath = '../lib/components/';
 var modulePath = '../lib/modules/';
+var urlPrefix;
 
 var db, result;
 
@@ -19,6 +20,7 @@ var log = new Log();
   var uriMatcher = new URIMatcher(originalURI);
 
   utils = require('initializers/utils.js')
+  urlPrefix = utils.relativePrefix(originalURI);
 
   require_db = require('config.jag');
   db = require_db.db_connect
@@ -91,7 +93,8 @@ var log = new Log();
 
   //include the controller
   try{
-    include(requestedController)
+    requestedController != undefined ? include(requestedController) : ""
+    //print(requestedController + '<br>')
   }catch(e){
     print(e.toString());
   }

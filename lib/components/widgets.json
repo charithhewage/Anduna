@@ -1,3 +1,10 @@
-widgets = {
+{
+	access_summary: "Access Summary",
+	important_files_access: "Important Files Access",
+	proxy_log_visits: "Proxy Log Visits",
+	request_summary: "Request Summary",
+	server_access_summary: "Server Access Summary",
+	sample_widget: "Sample Widget",
+	testwidget: "Test Widget"
 	
 }
