@@ -65,11 +65,11 @@
                   </div>
                   <div id="importnat_file_access_modal_content" class="modal-body">
                   <table>
-                    <tr><td><h4><strong>Ip Address&nbsp;&nbsp;</strong></h4></td><td><p>:&nbsp;&nbsp;</p></td><td><h4 class="clientIp" >no data</h4></td></tr>
-                    <tr><td><p><strong>Access Count&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="count"></p></tr> 
-                    <tr><td><strong>Request Data Size&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="size"></p></td></tr>
-                    <tr><td><p><strong>Browser&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="browser"></p></td></tr>
-                    <tr><td><p><strong>Operating System&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="os"></p></td></tr>
+                    <tr class="clientIp" ></tr>
+                    <tr class="count"></tr> 
+                    <tr class="size"></tr>
+                    <tr class="browser"></tr>
+                    <tr class="os"></tr>
                     <p class=""></p>
                     <p class="date"></p>
                     </table>
