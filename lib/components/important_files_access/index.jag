@@ -1,5 +1,7 @@
 <link href="lib/components/important_files_access/assets/css/draw_important_file_access_bar_chart.css" rel="stylesheet">
 
+<link href="lib/components/important_files_access/assets/css/draw_important_file_access_pie_chart.css" rel="stylesheet">
+
 <script src="lib/components/important_files_access/assets/js/dao.js"></script>
 
 <script src="lib/components/important_files_access/assets/js/charts/draw_imortant_file_access_bar_chart.js"></script>
@@ -24,9 +26,15 @@
         </a>
         
         <ul class="dropdown-menu dropdown-user">
-          <li><a href="#" onClick="get_data_grup_by_ip(1)">Show Bar Chart </a>
+          <li><a href="#" onClick="get_data_grup_by_ip(1)">Access Count based on IP - Bar Chart </a>
         </li>
-          <li><a href="#" onClick="get_data_grup_by_ip(2)">Show Pie Chart </a>
+          <li><a href="#" onClick="get_data_grup_by_ip(2)">Access Count based on IP - Pie Chart </a>
+          </li>
+          <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Browser </a>
+          </li>
+          <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Request Type </a>
+          </li>
+          <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Date </a>
           </li>
           <li><a href="#" onClick="showimportantFileAccessAlData()">Show Full Log File </a>
           </li>
@@ -38,8 +46,38 @@
       </div>
     </div>
 
-    <div id="elem" class="ibox-content resizable">
-      <div id="chart2" style="min-height:150px"></div>
+    <div id="importnat_file_access_div" class="ibox-content resizable">
+      <div id="chart_for_imp_file_access" style="min-height:150px"></div>
+      <!-- info modal load -->
+          <div id="importnat_file_access_modal" class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content modal-content_chart">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Chart Info</h4>
+                  </div>
+                  <div id="importnat_file_access_modal_content" class="modal-body">
+                  <table>
+                    <tr><td><h4><strong>Ip Address&nbsp;&nbsp;</strong></h4></td><td><p>:&nbsp;&nbsp;</p></td><td><h4 class="clientIp" >no data</h4></td></tr>
+                    <tr><td><p><strong>Access Count&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="count"></p></tr> 
+                    <tr><td><strong>Request Data Size&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="size"></p></td></tr>
+                    <tr><td><p><strong>Browser&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="browser"></p></td></tr>
+                    <tr><td><p><strong>Operating System&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="os"></p></td></tr>
+                    <p class=""></p>
+                    <p class="date"></p>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-modal-chart" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <!-- modal end -->
+  
     </div>
   </div>
 </div>
