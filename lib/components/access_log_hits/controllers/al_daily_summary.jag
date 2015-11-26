@@ -1,10 +1,10 @@
 <%
 var log = new Log();
-log.info("PL Access Summary - Max visit site");
+log.info("AL daily summary");
 
 try{
 
-  var result = db.query("SELECT DISTINCT * FROM PL_AccessSummary");
+  var result = db.query("SELECT DISTINCT * FROM AL_DailySummary");
   log.info(result);
   response.contentType = "application/json";
   response.characterEncoding = "UTF-8";

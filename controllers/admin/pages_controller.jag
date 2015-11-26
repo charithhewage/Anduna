@@ -1,0 +1,5 @@
+<%
+data = { layout: "admin/layouts/index"}
+include('../../views/index.jag')
+
+%>

@@ -1,23 +1,26 @@
 <%
-var root_dir, ctrl, current_user, current_url, utils;
-var controller = '../controllers/';
+var root = "home";
+var root_dir, utils;
 var widgetPath = '../lib/components/';
 var modulePath = '../lib/modules/';
-
-var setLogin;
+var urlPrefix;
 
 var db, result;
 
-(function () {
+var log = new Log();
 
-  //Root should be cofigured here.
-  var root = 'home';
+(function(){
   
-  var log = new Log();
+  var result;
+  var requestedController;
+  var whitelistedURI = ["assets", "lib"]
+  var controllerPath;
 
   var originalURI = request.getRequestURI();
   var uriMatcher = new URIMatcher(originalURI);
+
   utils = require('initializers/utils.js')
+  urlPrefix = utils.relativePrefix(originalURI);
 
   require_db = require('config.jag');
   db = require_db.db_connect
@@ -27,40 +30,77 @@ var db, result;
 
   /*** /Include core Modules  **/
 
-  current_url = originalURI;
+  //current_url = originalURI;
 
-  if (uriMatcher.match('/{dirr}') || uriMatcher.match('/{dirr}/')) {
+  //Identifying the correct controller
+  //for root
+  if(uriMatcher.match('/{dirr}/{+any}')){
     vars = uriMatcher.elements();
     root_dir = vars.dirr
-    urlDomain = vars.domain;
-    //relativeURI = originalURI.match(/.*\/$/ig) ? '/' : '';
-    controller += root + '_controller.jag';
   }
 
-  else if (uriMatcher.match('/{dirr}/{ctrl}') || uriMatcher.match('/{dirr}/{ctrl}/')) {
-    vars = uriMatcher.elements();
-    root_dir = vars.dirr
-    urlDomain = vars.domain;
-    //relativeURI = '/' + vars.ctrl;
-    vars.ctrl == 'assets' || vars.ctrl == 'lib' ? controller = '../' + vars.ctrl + '/' + vars.any : controller += vars.ctrl + '_controller.jag';
-    //print(controller)
-  } 
+  var ContextPath = request.getContextPath()
 
-  else if (uriMatcher.match('/{dirr}/{ctrl}/{+any}')) {
-    vars = uriMatcher.elements();
-    root_dir = vars.dirr
-    //relativeURI = originalURI.match(/.*\/$/ig) ? '/' : vars.any;
-    vars.ctrl == 'assets' || vars.ctrl == 'lib' ? controller = '../' + vars.ctrl + '/' + vars.any : controller += vars.ctrl + '_controller.jag';
-    //print(controller)
-  } 
+  var splitedURI = originalURI.split("/");
+  splitedURI.push("", "", "")
 
-  else {
-    response.sendError(404, 'requested resource cannot be found');
-    return;
+  if(splitedURI[2] == ""){
+    requestedController = "../controllers/" + root + '_controller.jag'
   }
-  include(controller);
+  else{
+    setController()
+  }
+  
+  function setController(){
+    
+    var assetsURI
+    var isWhitelisted = false
 
-}());
+    for each (var item in whitelistedURI) {
+      if(originalURI.match('(.*)(' + item + ')(\/)(.*)')){
+        assetsURI = originalURI.replace(new RegExp('(.*)(' + item + ')(\/)(.*)'), '$2$3$4')
+        requestedController = "../" + assetsURI
+        isWhitelisted = true
+        log.info("called to assets")
+        log.info(requestedController)
+        break;
+      }
+    }
+
+    isWhitelisted == false ? requestedController = findController() : ""
+  
+    return requestedController
+
+  }// setController
+
+  function findController(){
+    var path = [
+            '/controllers/' + splitedURI[2] + "_controller.jag",
+            '/controllers/' + splitedURI[2] + "/" + splitedURI[3] + "_controller.jag"
+            ]
+    for (var i = 0; i < path.length; i++) {
+      
+      var file = new File(path[i]);
+      
+      if (file.isExists()) {
+        return path[i];
+        break;
+      }
+
+    };
+
+  }// findController
+
+  //include the controller
+  try{
+    requestedController != undefined ? include(requestedController) : ""
+    //print(requestedController + '<br>')
+  }catch(e){
+    print(e.toString());
+  }
+  
+
+}());// Init function
 
 
 %>

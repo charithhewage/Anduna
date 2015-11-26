@@ -1,6 +1,4 @@
 <%
-
-
 (function () {
 	var email;
 	var password;
@@ -44,22 +42,6 @@
 
 		return data;
 	}
-
-
-
-  
-
-
-	// try{
-	// 	if(db){
-
-	// 	}
-	// 	var result = db.query("SELECT * FROM PL_AccessSummary")
-	// 	print(result);
-
-	// }catch(e){
-	// 	 print(e.toString());
-	// }
 
 	destroyLogin = function(){
 		session.remove("user");

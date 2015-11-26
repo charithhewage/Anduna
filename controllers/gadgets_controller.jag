@@ -3,7 +3,8 @@
   enabled_stats_gadgets = {	
   	proxy_log_visits :	"Proxy Log Visits",
   	important_files_access :	"Important Files Access",
-  	//server_access_summary	: "Server Access Summary",
+  	access_log_hits : "Access Log Hits ",
+  	bandwidth_summary	: "Bandwidth Summary",
   	//request_summary				: "Request Summery",
   	//sample_widget 				: "Sample",
   	attack_404 : "404 attack"

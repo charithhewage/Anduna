@@ -1,0 +1,17 @@
+<%
+include_once("../shared/_main_nav.jag")
+%>
+
+<%
+(function(){
+print('<div class="row"><div class="list-group col-md-6">')
+	var state;
+for (var item in data.widgets){
+	data.widgets[item]['state'] == true ? state = "Enabled" : state = "Desabled"
+	print('<a href="#" class="list-group-item">'+data.widgets[item]['title']+'<span class="badge">'+state+'</span></a>') 
+}
+
+print('</div></div>')
+
+}())
+%>
