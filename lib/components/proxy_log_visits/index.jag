@@ -52,10 +52,16 @@
                 </ul>
                 </br>
             </div>
-            <div id="visitsChart" style="height:100px">
+            <!-- <div id="visitsChart" style="height:100px">
         
-            </div>
+            </div> -->
 
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready( function(){
+    $("#proxy_log_visits .ibox-content").append('<div id="visitsChart" style="height:300px"></div>')
+})
+</script>
