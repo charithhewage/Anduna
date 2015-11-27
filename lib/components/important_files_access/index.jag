@@ -2,10 +2,19 @@
 
 <link href="lib/components/important_files_access/assets/css/draw_important_file_access_pie_chart.css" rel="stylesheet">
 
+<link href="lib/components/important_files_access/assets/css/draw_important_access_data_group_by_browser.css" rel="stylesheet">
+
+<link href="lib/components/important_files_access/assets/css/draw_important_access_data_group_by_request.css" rel="stylesheet">
+
 <script src="lib/components/important_files_access/assets/js/dao.js"></script>
 
 <script src="lib/components/important_files_access/assets/js/charts/draw_imortant_file_access_bar_chart.js"></script>
+
 <script src="lib/components/important_files_access/assets/js/charts/draw_important_file_access_pie_chart.js"></script>
+
+<script src="lib/components/important_files_access/assets/js/charts/draw_important_access_data_group_by_browser.js"></script>
+
+<script src="lib/components/important_files_access/assets/js/charts/draw_important_access_data_group_by_request.js"></script>
 
 
 
@@ -30,9 +39,9 @@
         </li>
           <li><a href="#" onClick="get_data_grup_by_ip(2)">Access Count based on IP - Pie Chart </a>
           </li>
-          <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Browser </a>
+          <li><a href="#" onClick="get_data_group_by_browser()">Access Count based on Browser </a>
           </li>
-          <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Request Type </a>
+          <li><a href="#" onClick="get_data_group_by_request()">Access Count based on Request Type </a>
           </li>
           <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Date </a>
           </li>
@@ -60,11 +69,11 @@
                   </div>
                   <div id="importnat_file_access_modal_content" class="modal-body">
                   <table>
-                    <tr><td><h4><strong>Ip Address&nbsp;&nbsp;</strong></h4></td><td><p>:&nbsp;&nbsp;</p></td><td><h4 class="clientIp" >no data</h4></td></tr>
-                    <tr><td><p><strong>Access Count&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="count"></p></tr> 
-                    <tr><td><strong>Request Data Size&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="size"></p></td></tr>
-                    <tr><td><p><strong>Browser&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="browser"></p></td></tr>
-                    <tr><td><p><strong>Operating System&nbsp;&nbsp;</strong></p></td><td><p>:&nbsp;&nbsp;</p></td><td><p class="os"></p></td></tr>
+                    <tr class="clientIp" ></tr>
+                    <tr class="count"></tr> 
+                    <tr class="size"></tr>
+                    <tr class="browser"></tr>
+                    <tr class="os"></tr>
                     <p class=""></p>
                     <p class="date"></p>
                     </table>

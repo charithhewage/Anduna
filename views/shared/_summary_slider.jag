@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-9_new col-md-9" id="SummaryViewSlider">
+  
+<%
+  (function() {
+    var setControllers = false;
+    var controllerDiv;
+    
+    for (var key in data.enabled_stats_gadgets) {
+      if (data.enabled_stats_gadgets.hasOwnProperty(key)) {
+
+        setControllers == true ? controllerDiv = "" : controllerDiv = '<div class="MagicSlideshow " data-options="width: 100%; arrows: true; selectors: bottom; pause: hover;"><div>'
+        
+        var container = '<div id="'+ key +'">'+controllerDiv+'<div class="ibox-title"><h3>'+ data.enabled_stats_gadgets[key] +'</h3></div><div class="ibox-content"><div id="visitsChart" style="height:100px"></div></div></div>'
+
+        print(container)
+
+        setControllers = true
+
+      }
+    }
+  } ()); 
+  %>  
+
+  </div>
+</div><!-- /Slider -->

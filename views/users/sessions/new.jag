@@ -12,5 +12,4 @@
     <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
     <a href="#"><small>Forgot password?</small></a>
   </form>
-    <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 © 2014</small> </p>
 </div>
