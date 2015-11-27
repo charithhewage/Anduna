@@ -1,20 +1,42 @@
-<nav class="navbar navbar-default">
-	<ul class="nav navbar-nav">
-	  <li class="active"><a href="<%= urlPrefix %>admin/navigations">Navigations</a></li>
-	  <li><a href="<%= urlPrefix %>admin/widgets">Widgets</a></li>
-	  <li><a href="<%= urlPrefix %>admin/users"">Users</a></li>
-	  <!--
-	  <li class="dropdown">
-	    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-	    <!-- <ul class="dropdown-menu">
-	      <li><a href="#">Action</a></li>
-	      <li><a href="#">Another action</a></li>
-	      <li><a href="#">Something else here</a></li>
-	      <li role="separator" class="divider"></li>
-	      <li><a href="#">Separated link</a></li>
-	      <li role="separator" class="divider"></li>
-	      <li><a href="#">One more separated link</a></li>
-	    </ul>	-->
-	  </li>
-	 </ul>
+<nav class="navbar navbar-static-top" role="navigation">
+  <div class="navbar-collapse collapse" id="navbar">
+    <ul class="nav navbar-nav ">
+    	<li id="navigations">
+        <a href="<%= urlPrefix %>admin/navigations">Navigations</a>
+      </li>
+  		<li id="widgets">
+        <a href="<%= urlPrefix %>admin/widgets">Widgets</a>
+      </li>
+  		<li id="users">
+        <a href="<%= urlPrefix %>admin/users">Users</a>
+      </li>
+      <!-- <li class="active">
+        <a aria-expanded="false" role="button" href="layouts.html"> Back to main Layout page</a>
+      </li>
+      <li class="dropdown">
+        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+        <ul role="menu" class="dropdown-menu">
+            <li><a href="">Menu item</a></li>
+            <li><a href="">Menu item</a></li>
+            <li><a href="">Menu item</a></li>
+            <li><a href="">Menu item</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+        <ul role="menu" class="dropdown-menu">
+            <li><a href="">Menu item</a></li>
+            <li><a href="">Menu item</a></li>
+            <li><a href="">Menu item</a></li>
+            <li><a href="">Menu item</a></li>
+        </ul>
+      </li> -->
+    </ul>
+  </div>
 </nav>
+
+<script>
+  var pathname = window.location.pathname;
+  pathname = pathname.split('/')
+  $("#"+pathname[3]).addClass("active")
+</script>

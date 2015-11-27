@@ -81,6 +81,12 @@
         <%
         include('../' + data.container_path + '.jag') 
         %>
+
+        <%
+        include("../shared/_summary_slider.jag") 
+        %>
+        
+        <div style="height: 100px; margin-bottom: 100px;"></div>
       </div>
       
       <div id="footer">
@@ -95,7 +101,37 @@
       include("../shared/_alerts_container.jag") 
       %>
     </div>
+
+
+    
+
+
+
+
+
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script type="text/javascript" >
   
   $(document).pjax('a', '#pjax-container')

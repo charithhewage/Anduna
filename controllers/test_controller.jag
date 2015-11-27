@@ -1,7 +1,4 @@
 <%
-(function(){
-
-include("../views/index.jag");
-}())
+print("dddlksfjldkfj")
 
 %>

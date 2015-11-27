@@ -5,10 +5,10 @@
 			for (var key in data.enabled_stats_gadgets) {
 			  if (data.enabled_stats_gadgets.hasOwnProperty(key)) {
 			    include('../' + widgetPath + key + '/index.jag')
+			    //print('<input type="hidden" name="enabledWidgets[]"  value="'+key+'" class="enabled-widgets"/>' )
 				}
 			}
 		} ()); 
 		%>	
 	</div>
 </div>
-<div id="gadgetsSliderContainer"></div>
