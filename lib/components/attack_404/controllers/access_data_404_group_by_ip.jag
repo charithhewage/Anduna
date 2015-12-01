@@ -1,11 +1,11 @@
 <%
 var log = new Log();
-log.info("Access Summary Server");
+log.info("404 details grup by ip");
 
 
 try{
 
-    var result = db.query("SELECT * FROM AL_LastHourImportantFileAccessInfo" );
+    var result = db.query("SELECT clientIpAddress, COUNT(date_time) AS totalcount, SUM(size) AS request_size FROM AL_LastHour404Request GROUP BY clientIpAddress");
  //print(result);
     response.contentType = "application/json";
     response.characterEncoding = "UTF-8";
