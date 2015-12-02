@@ -41,9 +41,9 @@
           </li>
           <li><a href="#" onClick="get_404_request_data_group_by_request()">404 Count based on Request </a>
           </li>
-          <!-- <li><a href="#" onClick="get_data_group_by_request()">Access Count based on Request Type </a>
+          <li><a href="#" onClick="show404reqestTable()">Show 404 access table </a>
           </li>
-          <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Date </a>
+          <!-- <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Date </a>
           </li> -->
           <li><a href="#" onClick="show404reqestData()">Show Full Log File </a>
           </li>
@@ -57,6 +57,13 @@
 
     <div id="access_404_div" class="ibox-content resizable">
       <div id="chart_for_404_access" style="min-height:150px"></div>
+      <!-- table --> 
+         <table>
+           <thead id="access_404_table_head"></thead>
+           <tbody id="access_404_table_body"></tbody>
+         </table>  
+      <!-- table end  -->
+      
       <!-- info modal load -->
           <div id="access_404_modal" class="modal fade" id="myModal" role="dialog">
               <div class="modal-dialog">
