@@ -2,9 +2,9 @@
 
 <link href="lib/components/attack_404/assets/css/access_404_Ip_based_pie_chart.css" rel="stylesheet">
 
-<!-- <link href="lib/components/attack_404/assets/css/draw_important_access_data_group_by_browser.css" rel="stylesheet">
+<link href="lib/components/attack_404/assets/css/access_404_Request_based_pie_chart.css" rel="stylesheet">
 
-<link href="lib/components/attack_404/assets/css/draw_important_access_data_group_by_request.css" rel="stylesheet"> -->
+<!-- <link href="lib/components/attack_404/assets/css/draw_important_access_data_group_by_request.css" rel="stylesheet"> -->
 
 <script src="lib/components/attack_404/assets/js/dao.js"></script>
 
@@ -12,9 +12,9 @@
 
 <script src="lib/components/attack_404/assets/js/charts/access_404_Ip_based_pie_chart.js"></script>
 
-<!-- <script src="lib/components/attack_404/assets/js/charts/draw_important_access_data_group_by_browser.js"></script>
+ <script src="lib/components/attack_404/assets/js/charts/access_404_Request_based_pie_chart.js"></script>
 
-<script src="lib/components/attack_404/assets/js/charts/draw_important_access_data_group_by_request.js"></script> -->
+<!--<script src="lib/components/attack_404/assets/js/charts/draw_important_access_data_group_by_request.js"></script> -->
 
 
 
@@ -39,9 +39,9 @@
         </li>
           <li><a href="#" onClick="get_404_request_data_group_by_ip(2)">404 Count based on IP - Pie Chart </a>
           </li>
-          <!-- <li><a href="#" onClick="get_data_group_by_browser()">Access Count based on Browser </a>
+          <li><a href="#" onClick="get_404_request_data_group_by_request()">404 Count based on Request </a>
           </li>
-          <li><a href="#" onClick="get_data_group_by_request()">Access Count based on Request Type </a>
+          <!-- <li><a href="#" onClick="get_data_group_by_request()">Access Count based on Request Type </a>
           </li>
           <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Date </a>
           </li> -->

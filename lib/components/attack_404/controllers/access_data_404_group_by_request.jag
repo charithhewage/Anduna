@@ -1,11 +1,11 @@
 <%
 var log = new Log();
-log.info("404 details grup by ip");
+log.info("404 details grup by req");
 
 
 try{
 
-    var result = db.query("SELECT clientIpAddress, COUNT(date_time) AS totalcount, SUM(size) AS request_size, requestedFile FROM AL_LastHour404Request GROUP BY clientIpAddress");
+    var result = db.query("SELECT SUBSTRING_INDEX(requestedFile, '/', 1) AS requesttype, COUNT(date_time) AS totalcount, SUM(size) AS request_size, requestedFile FROM AL_LastHour404Request GROUP BY SUBSTRING_INDEX(requestedFile, '/', 1)");
  //print(result);
     response.contentType = "application/json";
     response.characterEncoding = "UTF-8";
