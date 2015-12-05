@@ -6,6 +6,7 @@
   	access_log_hits : "Access Log Hits ",
   	bandwidth_summary	: "Bandwidth Summary",
   	attack_404	: "404 attack",
+  	threats_summary : "Threats Summary",
 	}
 
 
