@@ -64,12 +64,15 @@
                 <!-- Modal content-->
                 <div class="modal-content modal-content_chart">
                   <div class="modal-header">
+
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Chart Info</h4>
+
                   </div>
                   <div id="importnat_file_access_modal_content" class="modal-body">
                   <table>
                     <tr class="clientIp" ></tr>
+                    <button type="button" class="btn btn-default btn-modal-chart" style="float:right" onClick="showimportantFileAccessAlData()">Show Full Log</button>
                     <tr class="count"></tr> 
                     <tr class="size"></tr>
                     <tr class="browser"></tr>
@@ -85,7 +88,33 @@
                 
               </div>
             </div>
-            <!-- modal end -->
+            <!-- modal end / info modal starts-->
+            
+
+            <div id="importnat_file_access_full_log_modal" class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content modal-content_chart">
+                  <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Full log</h4>
+
+                  </div>
+                  <div id="importnat_file_access_full_log_modal_content" class="modal-body">
+                  <table>
+                    
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-modal-chart" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <!---modal end---->
   
     </div>
   </div>

@@ -1,0 +1,22 @@
+.x_axis line {
+    fill: none;
+    stroke: #464646;
+    shape-rendering: crispEdges;
+    stroke-width: 1px;
+}
+
+.x text {
+    font-family: sans-serif;
+    font-size: 11px;
+    -webkit-transform: rotate(-90deg);
+    text-anchor: start;
+    dx: 10em !important;
+    dy: 5em !important;
+}
+
+
+text.tick{
+
+dy:0 !important;
+dx:20 !important;
+}

@@ -5,7 +5,7 @@ log.info("Access Summary Server");
 
 try{
 
-    var result = db.query("SELECT clientIpAddress, requestedFile, resultCode, size, url, browserInfo FROM AL_LastHourImportantFileAccessInfo" );
+    var result = db.query("SELECT clientIpAddress, date_time, requestedFile, resultCode, size, url, browserInfo FROM AL_LastHour404Request" );
  //print(result);
     response.contentType = "application/json";
     response.characterEncoding = "UTF-8";
