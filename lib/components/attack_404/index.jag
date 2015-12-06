@@ -79,7 +79,7 @@
                   <div id="access_404_modal_content" class="modal-body">
                   <table>
                     <tr class="clientIp" ></tr>
-                    <button type="button" class="btn btn-default btn-modal-chart" style="float:right" onClick="show404reqestData()">Show Full Log</button>
+                    <button type="button" class="btn btn-default btn-modal-chart" style="float:right" onClick="show404requestDataByParam()">Show Full Log</button>
                     <tr class="count"></tr> 
                     <tr class="size"></tr>
                     <tr class="browser"></tr>
