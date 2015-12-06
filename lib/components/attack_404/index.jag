@@ -58,7 +58,7 @@
     <div id="access_404_div" class="ibox-content resizable">
       <div id="chart_for_404_access" style="min-height:150px"></div>
       <!-- table --> 
-         <table>
+         <table id="access_404_table">
            <thead id="access_404_table_head"></thead>
            <tbody id="access_404_table_body"></tbody>
          </table>  

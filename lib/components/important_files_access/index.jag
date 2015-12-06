@@ -43,6 +43,8 @@
           </li>
           <li><a href="#" onClick="get_data_group_by_request()">Access Count based on Request Type </a>
           </li>
+          <li><a href="#" onClick="showimportantFileAccessDataTable()">Important File Access Table </a>
+          </li>
           <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Date </a>
           </li>
           <li><a href="#" onClick="showimportantFileAccessAlData()">Show Full Log File </a>
@@ -57,6 +59,13 @@
 
     <div id="importnat_file_access_div" class="ibox-content resizable">
       <div id="chart_for_imp_file_access" style="min-height:150px"></div>
+
+      <!-- table --> 
+         <table id="important_file_access_table">
+           <thead id="important_file_access_table_head"></thead>
+           <tbody id="important_file_access_table_body"></tbody>
+         </table>  
+      <!-- table end  -->
       <!-- info modal load -->
           <div id="importnat_file_access_modal" class="modal fade" id="myModal" role="dialog">
               <div class="modal-dialog">
@@ -71,13 +80,13 @@
                   </div>
                   <div id="importnat_file_access_modal_content" class="modal-body">
                   <table>
-                    <tr class="clientIp" ></tr>
-                    <button type="button" class="btn btn-default btn-modal-chart" style="float:right" onClick="showimportantFileAccessAlData()">Show Full Log</button>
+                    <tr class="clientIp" id="IP"></tr>
+                    <button type="button" class="btn btn-default btn-modal-chart" style="float:right" onClick="showimportantFileAccessAlDataByParam()">Show Full Log</button>
                     <tr class="count"></tr> 
                     <tr class="size"></tr>
                     <tr class="browser"></tr>
                     <tr class="os"></tr>
-                    <p class=""></p>
+                    <p class="request_type"></p>
                     <p class="date"></p>
                     </table>
                   </div>
