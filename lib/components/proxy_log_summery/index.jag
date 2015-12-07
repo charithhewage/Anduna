@@ -1,18 +1,18 @@
-<link href="lib/components/attack_404/assets/css/access_404_Ip_based_bar_chart.css" rel="stylesheet">
+<link href="lib/components/proxy_log_summery/assets/css/proxy_data_Ip_based_bar_chart.css" rel="stylesheet">
 
-<link href="lib/components/attack_404/assets/css/access_404_Ip_based_pie_chart.css" rel="stylesheet">
+<link href="lib/components/proxy_log_summery/assets/css/proxy_data_Ip_based_pie_chart.css" rel="stylesheet">
 
-<link href="lib/components/attack_404/assets/css/access_404_Request_based_pie_chart.css" rel="stylesheet">
+<link href="lib/components/proxy_log_summery/assets/css/proxy_data_Result_based_pie_chart.css" rel="stylesheet">
 
 <!-- <link href="lib/components/attack_404/assets/css/draw_important_access_data_group_by_request.css" rel="stylesheet"> -->
 
-<script src="lib/components/attack_404/assets/js/dao.js"></script>
+<script src="lib/components/proxy_log_summery/assets/js/dao.js"></script>
 
-<script src="lib/components/attack_404/assets/js/charts/access_404_Ip_based_bar_chart.js"></script>
+<script src="lib/components/proxy_log_summery/assets/js/charts/proxy_data_Ip_based_bar_chart.js"></script>
 
-<script src="lib/components/attack_404/assets/js/charts/access_404_Ip_based_pie_chart.js"></script>
+<script src="lib/components/proxy_log_summery/assets/js/charts/proxy_data_Ip_based_pie_chart.js"></script>
 
- <script src="lib/components/attack_404/assets/js/charts/access_404_Request_based_pie_chart.js"></script>
+ <script src="lib/components/proxy_log_summery/assets/js/charts/proxy_data_Result_based_pie_chart.js"></script>
 
 <!--<script src="lib/components/attack_404/assets/js/charts/draw_important_access_data_group_by_request.js"></script> -->
 
@@ -23,7 +23,7 @@
   <div class="ibox float-e-margins">
     <!-- <div>-->
     <div class="ibox-title">
-      <h5>404 Access Count</h5>
+      <h5>Proxy Log Summery</h5>
       
       <div class="ibox-tools">
         <a class="collapse-link">
@@ -35,17 +35,17 @@
         </a>
         
         <ul class="dropdown-menu dropdown-user">
-          <li><a href="#" onClick="get_404_request_data_group_by_ip(1)">404 Count based on IP - Bar Chart </a>
+          <li><a href="#" onClick="get_proxy_logs_data_group_by_ip(1)">Proxy Log Summery based on IP - Bar Chart </a>
         </li>
-          <li><a href="#" onClick="get_404_request_data_group_by_ip(2)">404 Count based on IP - Pie Chart </a>
+          <li><a href="#" onClick="get_proxy_logs_data_group_by_ip(2)">Proxy Log Summery based on IP - Pie Chart </a>
           </li>
-          <li><a href="#" onClick="get_404_request_data_group_by_request()">404 Count based on Request </a>
+          <li><a href="#" onClick="get_proxy_logs_data_group_by_resultCode()">Proxy Log Summery based on Result Code </a>
           </li>
-          <li><a href="#" onClick="show404reqestTable()">Show 404 access table </a>
+          <li><a href="#" onClick="proxy_logs_data_table()">Show Proxy Log Summery table </a>
           </li>
           <!-- <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Date </a>
           </li> -->
-          <li><a href="#" onClick="show404reqestData()">Show Full Log File </a>
+          <li><a href="#" onClick="full_proxy_logs_data()">Show Full Proxy Log </a>
           </li>
         </ul>
         
@@ -55,17 +55,17 @@
       </div>
     </div>
 
-    <div id="access_404_div" class="ibox-content resizable">
-      <div id="chart_for_404_access" style="min-height:150px"></div>
+    <div id="proxy_summery_div" class="ibox-content resizable">
+      <div id="chart_for_proxy_summery" style="min-height:150px"></div>
       <!-- table --> 
-         <table id="access_404_table">
-           <thead id="access_404_table_head"></thead>
-           <tbody id="access_404_table_body"></tbody>
+         <table id="proxy_log_table">
+           <thead id="proxy_log_table_head"></thead>
+           <tbody id="proxy_log_table_body"></tbody>
          </table>  
       <!-- table end  -->
       
       <!-- info modal load -->
-          <div id="access_404_modal" class="modal fade" id="myModal" role="dialog">
+          <div id="proxy_log_modal" class="modal fade" id="myModal" role="dialog">
               <div class="modal-dialog">
               
                 <!-- Modal content-->
@@ -76,10 +76,10 @@
                     <h4 class="modal-title">Chart Info</h4>
 
                   </div>
-                  <div id="access_404_modal_content" class="modal-body">
+                  <div id="proxy_log_modal_content" class="modal-body">
                   <table>
                     <tr class="clientIp" ></tr>
-                    <button type="button" class="btn btn-default btn-modal-chart" style="float:right" onClick="show404requestDataByParam()">Show Full Log</button>
+                    <button type="button" class="btn btn-default btn-modal-chart" style="float:right" onClick="full_proxy_logs_data_by_param()">Show Full Log</button>
                     <tr class="count"></tr> 
                     <tr class="size"></tr>
                     <tr class="browser"></tr>
@@ -96,7 +96,7 @@
               </div>
             </div>
             <!-- modal end / full info modal starts-->
-             <div id="access_404_full_log_modal" class="modal fade" id="myModal" role="dialog">
+             <div id="proxy_data_full_log_modal" class="modal fade" id="myModal" role="dialog">
               <div class="modal-dialog">
               
                 <!-- Modal content-->
@@ -107,7 +107,7 @@
                     <h4 class="modal-title">Full log</h4>
 
                   </div>
-                  <div id="access_404_full_log_modal_content" class="modal-body">
+                  <div id="proxy_data_full_log_modal_content" class="modal-body">
                   <table>
                     
                     </table>
