@@ -1,0 +1,11 @@
+<div class="col-md-2_new col-md-2">
+	<div class="ibox float-e-margins">
+    	<div class="ibox-title">
+            <span class="label label-info pull-right">System Info</span>
+            <h5>Memory</h5>
+        </div>
+        <div class="ibox-content">
+            <div id="memory-gauge"></div>
+        </div>
+    </div>
+</div>
