@@ -18,25 +18,14 @@
     <div class="tab-content">
 
       <div id="tab-1" class="tab-pane active">
-        <div class="sidebar-title">
+        <div class="sidebar-title" id="sidebarTitle">
           <h3> <i class="fa fa-warning"></i><i></i>Alerts</h3>
           <small><i class="fa fa-tim"></i></small>
         </div>
 
-        <div>
-          <div class="sidebar-message">
-            <a href="#">
-              <div class="alert alert-danger">
-                <a href="#" class="close" data-dismiss="alert">&times;</a>
-                <strong>Warning!</strong>
-                <p> There was a problem with your network connection.</p>
-                </br>
-                  <button type="button" class="btn btn-default btn-default-2">Respond</button>
-                  <button type="button" class="btn btn-default btn-default-2">More</button>
-              </div>
-            </a>
-          </div>  
-        </div>
+        <div class="sidebar-message" id="sidebarMessage">
+          
+        </div>  
       </div>
 
       <div id="tab-2" class="tab-pane">

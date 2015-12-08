@@ -23,8 +23,22 @@
 
 .alert-danger {
     color: #FFFFFF !important;
-    background-color: #FF0707 !important;
-    border-color: #000000 !important;
+    background-color: #ec4758 !important;
+    border: 1px solid #ea394c !important;
+    box-shadow: inset 0px 0px 0px #ea394c, 0px 5px 0px 0px #ea394c;
+}
+.alert-warning {
+    color: #FFFFFF !important;
+    background-color: #f7a54a !important;
+    border: 1px solid #f7a54a !important;
+    box-shadow: inset 0px 0px 0px #f7a54a, 0px 5px 0px 0px #f7a54a;
+}
+
+.alert-success {
+    color: #FFFFFF !important;
+    background-color: #18a689 !important;
+    border: 1px solid #18a689 !important;
+    box-shadow: inset 0px 0px 0px #18a689, 0px 5px 0px 0px #18a689;
 }
 
 .btn-default-2 {
