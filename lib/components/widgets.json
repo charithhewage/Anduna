@@ -4,6 +4,7 @@
 	proxy_log_visits: "Proxy Log Visits",
 	request_summary: "Request Summary",
 	server_access_summary: "Server Access Summary",
+	alerts: "Alerts",
 	//sample_widget: "Sample Widget"
 	
 }

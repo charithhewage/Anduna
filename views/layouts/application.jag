@@ -34,6 +34,9 @@
   <script src="<%= urlPrefix %>assets/js/jquery-2.1.1.js"></script>
   <script src="<%= urlPrefix %>assets/js/jquery.pjax.js"></script>
   <script src="<%= urlPrefix %>assets/js/bootstrap.min.js"></script>
+  <script src="<%= urlPrefix %>assets/js/websocket.config.js"></script>
+
+  <script src="<%= urlPrefix %>assets/js/navigations.js"></script>
   <script src="<%= urlPrefix %>assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
   <script src="<%= urlPrefix %>assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
   <script src="<%= urlPrefix %>assets/js/d3.min.js"></script>
@@ -110,25 +113,6 @@
 
 
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
