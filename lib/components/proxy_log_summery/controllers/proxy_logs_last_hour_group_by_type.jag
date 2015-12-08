@@ -1,11 +1,11 @@
 <%
 var log = new Log();
-log.info("PL details grup by req");
+log.info("PL details grup by type");
 
 
 try{
 
-    var result = db.query("SELECT resultCodes, COUNT(date_time) AS totalcount, SUM(size) AS request_size, requestMethod FROM PL_LastHourLogs GROUP BY resultCodes");
+    var result = db.query("SELECT SUBSTRING_INDEX(type, '/', 1) AS data_type, COUNT(date_time) AS totalcount, SUM(size) AS request_size, resultCodes FROM PL_LastHourLogs GROUP BY SUBSTRING_INDEX(type, '/', 1)");
  //print(result);
     response.contentType = "application/json";
     response.characterEncoding = "UTF-8";
