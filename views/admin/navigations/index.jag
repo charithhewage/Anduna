@@ -1,18 +1,88 @@
+<div class="row border-bottom white-bg">
 <%
-include_once("../shared/_main_nav.jag")
+	include_once("../shared/_main_nav.jag")
 %>
 
-<%
+	<div class="col-lg-12">
+	  <div class="admin wrapper wrapper-content">
+	    <div class="row">
+	    	<div class="page-title">
+          <h5>Widgets</h5>
+             
+          </div>
+
+	    	<div class="col-md-4 item-list-left">
+	    		<div class="feed-activity-list">
+
+	    <%
 (function(){
-print('<div class="row"><div class="list-group col-md-6">')
 
-for (var item in data.navigations){
-	print('<a href="#" class="list-group-item">'+data.navigations[item]['titile']+'</a>') 
-}
+	var state;
+	for (var item in data.navigations){
+		print('<a href="#"><div class="feed-element">')
+		print('<div class="media-body ">')
+		print('<strong>'+data.navigations[item]['title']+'</strong>')
+		print('</div>')
 
-print('</div></div>')
+		print('</div></a>')
+
+	}
 
 }())
 %>
 
-<button type="submit" class="btn btn-success">Create a New Menu</button>
+</div>
+	    	</div>
+	    	<div class="col-md-8">
+<%
+if(data.current_widget){
+	var widget_data = require('../../../lib/components/'+data.current_widget+'/info.json')
+	
+}
+
+%>
+
+<div class="mail-box-header">
+  <h2>Create a New Navigation</h2>
+</div>
+<div class="mail-box">
+	<div class="mail-body">
+	<form method="post" action="<%= urlPrefix %>admin/navigations?q=create">
+	  <div class="form-group">
+	    <label for="title">Menu Title</label>
+	    <input type="text" class="form-control" id="title" name="title" placeholder="Menu Title">
+	  </div>
+	  <div class="form-group">
+	    <label for="prefix">Url Prefix</label>
+	    <input type="text" class="form-control" id="prefix" name="prefix" placeholder="sample_menu">
+	  </div>
+
+	  <div class="form-group">
+	    <label for="Layout">Layout</label>
+	    <select name="layout" class="form-control">
+	    	<option value="1">Summary Layout</option>
+	    	<option value="1">Security Page</option>
+	    	<option value="1">Reporting Page</option>
+	    </select>
+	  </div>
+
+	  <button type="submit" class="btn btn-success">Submit</button>
+	</form>
+
+
+
+	</div>
+</div>
+
+
+
+
+	    	</div>
+	    </div>
+	  </div>      
+	</div>
+
+</div><!-- Main Container-->
+
+
+

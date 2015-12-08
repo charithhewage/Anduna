@@ -1,29 +1,52 @@
 <%
 (function() {
+  var application = require('../application_controller.jag')
+  //Check authorized User
+  application.IsAuthorized()
 
-  //FIX-ME get user details from utils
-  current_user = session.get('user')
-
-  if(current_user){
-  	
-  	var result = db.query("SELECT * FROM  navigations");
-
-    data = { 
-      container_path: 'admin/navigations/index', 
-      navigations: result,
-    };
-  
-    include("../../views/layouts/application.jag");  
+  //Select the method
+  try{
+    this[application.actionMapper()]();
+  }catch(e){
+    print(e.toString());
   }
-  else{
-    // FIX-ME Redirect to sessions_controller and check user availability.
-    //response.sendRedirect(current_url + 'sessions/');
-    data = { container_path: 'users/sessions/new'};
-    include("../views/layouts/no_user.jag");
+  
+}() )
+
+
+
+function index(){
+  var result = db.query("SELECT * FROM  navigations");
+
+  data = { 
+    container_path: 'admin/navigations/index', 
+    navigations: result,
+  };
+
+  include("../../views/layouts/application.jag");   
+} // Index method
+
+
+function create(){
+  var params = request.getAllParameters("UTF-8")
+  
+  if(params.title != null ){
+    var result = db.query("INSERT INTO  `navigations` ( `id` , `title` , `title_name` , `type` , `icon_name` , `created_at` ) VALUES ( NULL ,  '"+params.title+"',  '"+params.prefix+"',  'main',  'fa fa2 fa-check', CURRENT_TIMESTAMP )")
   }
+  
+  var result = db.query("SELECT * FROM  navigations");
+
+  data = { 
+    container_path: 'admin/navigations/index', 
+    navigations: result,
+  };
+
+  include("../../views/layouts/application.jag");  
+
 
   
 
-} ()); 
+}
+
 
 %>

@@ -1,28 +1,22 @@
 <%
 (function() {
+  var application = require('../application_controller.jag')
+  //Check authorized User
+  application.IsAuthorized()
 
-  //FIX-ME get user details from utils
-  current_user = session.get('user')
+  //Select the method
+  try{
+    this[application.actionMapper()]();
+  }catch(e){
+    print(e.toString());
+  }
+  
+}() )
 
-  if(current_user){
 
-  	var Installedwidgets = require('../'+widgetPath +'/widgets.json')
 
-  	var result = db.query("SELECT * FROM  widgets");
-
-  	for (var key in Installedwidgets) {
-      if (Installedwidgets.hasOwnProperty(key)) {
-
-          var getWidget = getWidgetData(key, result);
-         
-          if(getWidget != undefined){
-          	Installedwidgets[key] = { id: getWidget.id, title: Installedwidgets[key], dir_name: key, state:  getWidget.state}
-          }
-          else{
-          	Installedwidgets[key] = { id: null, title: Installedwidgets[key], dir_name: key, state:  false}
-          }
-      }
-    }
+function index(){
+  var Installedwidgets = findInstalledWidgets()
 
     data = { 
       container_path: 'admin/widgets/index', 
@@ -30,26 +24,56 @@
     };
   
     include("../../views/layouts/application.jag");  
-  }
-  else{
-    // FIX-ME Redirect to sessions_controller and check user availability.
-    //response.sendRedirect(current_url + 'sessions/');
-    data = { container_path: 'users/sessions/new'};
-    include("../views/layouts/no_user.jag");
-  }
+} // Index method
 
-  function getWidgetData(widgetName, result){
-  	for (var item in result){
-			if(result[item]['dir_name'] == widgetName){
-				return result[item]
-				break;
-			}
-			else{
-				null
-			}
-		}
-  }
 
-} ()); 
+function show(){
+  var Installedwidgets = findInstalledWidgets()
+  
+  var widget = request.getParameter("name")
+  
+  data = { 
+      container_path: 'admin/widgets/index', 
+      widgets: Installedwidgets,
+      current_widget: widget
+    };
+  
+  include("../../views/layouts/application.jag"); 
+
+}
+
+function findInstalledWidgets(){
+  var Installedwidgets = require('../'+widgetPath +'/widgets.json')
+    
+    var result = db.query("SELECT * FROM  widgets");
+
+    this.getWidgetData = function(widgetName, result){
+      for (var item in result){
+        if(result[item]['dir_name'] == widgetName){
+          return result[item]
+          break;
+        }
+        else{
+          null
+        }
+      }
+    }//getWidgetData
+
+    for (var key in Installedwidgets) {
+      if (Installedwidgets.hasOwnProperty(key)) {
+
+          var getWidget = getWidgetData(key, result);
+         
+          if(getWidget != undefined){
+            Installedwidgets[key] = { id: getWidget.id, title: Installedwidgets[key], dir_name: key, state:  getWidget.state}
+          }
+          else{
+            Installedwidgets[key] = { id: null, title: Installedwidgets[key], dir_name: key, state:  false}
+          }
+      }
+    }
+    return Installedwidgets;
+}
+
 
 %>

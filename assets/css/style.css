@@ -7485,3 +7485,9 @@ body.skin-3 {
 /******** Custom Styles **************/
 
 #footer{ padding-top: 50px;}
+
+.admin-inner-nav{ background: #F1F1F1 !important; border-bottom: 2px solid #E6E6E6; margin-bottom: 0;}
+.item-list-left{ border-right: 4px solid #eee; height: 500px; overflow-y: scroll }
+.admin.wrapper{ padding: 10px 10px 40px}
+.admin .page-title{ margin: 0 -10px 10px -10px; border-bottom: 1px solid #E6E6E6;padding: 10px 20px 20px; }
+.admin .page-title h5{ margin: 0; padding: 0 }

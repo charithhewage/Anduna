@@ -1,4 +1,4 @@
-<nav class="navbar navbar-static-top" role="navigation">
+<nav class="navbar navbar-static-top admin-inner-nav" role="navigation">
   <div class="navbar-collapse collapse" id="navbar">
     <ul class="nav navbar-nav ">
     	<li id="navigations">

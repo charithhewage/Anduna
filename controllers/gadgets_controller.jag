@@ -1,11 +1,31 @@
 <%
 (function() {
-  enabled_stats_gadgets = {	
-  	proxy_log_visits :	"Proxy Log Visits",
-  	important_files_access :	"Important Files Access",
-  	access_log_hits : "Access Log Hits ",
-  	bandwidth_summary	: "Bandwidth Summary",
-	}
+
+	//var r = db.query("select * from `` WHERE page_id = '1'")
+
+	var originalURI = request.getRequestURI();
+	var splitedURI = originalURI.split("/");
+  splitedURI.push("", "", "")
+
+	if( splitedURI[2] == "dashboards"){
+  	enabled_stats_gadgets = {	
+	  	proxy_log_visits :	"Proxy Log Visits",
+	  	access_log_hits : "Access Log Hits ",
+	  	bandwidth_summary	: "Bandwidth Summary",
+	  	//testwidget: "Test Widget"
+		}
+  }
+  else if( splitedURI[2] == "securities"){
+  	enabled_stats_gadgets = {	
+	  	proxy_log_visits :	"Proxy Log Visits",
+	  	important_files_access :	"Important Files Access",
+	  	access_log_hits : "Access Log Hits ",
+	  	bandwidth_summary	: "Bandwidth Summary",
+	  	//testwidget: "Test Widget"
+		}
+  }
+
+  
 
 
 } ()); 

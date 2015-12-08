@@ -1,28 +1,45 @@
 <%
 (function() {
+  var application = require('application_controller.jag')
+  //Check authorized User
+  application.IsAuthorized()
+
+  //Select the method
+  try{
+    this[application.actionMapper()]();
+  }catch(e){
+    print(e.toString());
+  }
+  
+}() )
+
+
+
+function index(){
   include("gadgets_controller.jag");
 
-  //FIX-ME get user details from utils
-  current_user = session.get('user')
-
-  if(current_user){
-    data = { 
+  data = { 
       container_path: 'home/index', 
       enabled_stats_gadgets: enabled_stats_gadgets,
-    };
-  
-  
-    include("../views/layouts/application.jag");  
-  }
-  else{
-    // FIX-ME Redirect to sessions_controller and check user availability.
-    //response.sendRedirect(current_url + 'sessions/');
-    data = { container_path: 'users/sessions/new'};
-    include("../views/layouts/no_user.jag");
-  }
+  };
+  include("../views/layouts/application.jag");  
 
-  
+} // Index method
 
-} ()); 
+function enableWidget(){
+  var params = request.getAllParameters("UTF-8")
+  
+if(params.widget.length != 0){
+  for( var i = 0; i < params.widget.length ; i++){
+    var r = db.query("INSERT INTO  `dashboard-v-0-1`.`widgets` ( `id` , `title` , `dir_name` , `description` , `state` , `page_id` ) VALUES ( NULL ,  '"+params.widget[i]+"',  '"+params.widget[i]+"',  'Sample Description',  '1',  '1' )")
+  }
+}
+index()
+}
+
+
+
 
 %>
+
+

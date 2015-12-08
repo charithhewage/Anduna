@@ -1,3 +1,21 @@
 <%
-include("admin/home_controller.jag")
+
+function IsAuthorized(){
+  current_user = session.get('user')
+  if(current_user){
+    return
+  }
+  else{
+    data = { container_path: 'users/sessions/new'};
+    include(urlPrefix+ "../views/layouts/no_user.jag");
+  }
+}
+
+function actionMapper(){
+	var map;
+	request.getParameter("q") == null ? map =  "index" : map = request.getParameter("q")
+	return map;
+	
+}
+
 %>

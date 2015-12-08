@@ -1,0 +1,352 @@
+<div id="chart_div" style="min-height:400px; background:#fff;" class="col-md-8">
+	
+</div>
+
+<script>
+	$(document).ready( function(){
+
+		$.getJSON("lib/components/important_files_access/controllers/importnt_access_data_group_by_id.jag" , function (response){
+
+			var dataset = [];
+			$.each(response, function (key, val) {
+
+			    dataset.push({name : val.clientIpAddress,value : val.totalcount, req_size : val.request_size, browser_info : val.browserInfo});
+			});
+			
+			drawBarChart(dataset)
+			//drawImportantFileAccessPieChart(dataset)
+
+		});
+
+	})
+
+//////////////////////
+
+function drawBarChart(dataset){
+
+
+	 var tempWidth = 700, 
+        tempheight = 700;
+
+       var margin = {top: 40, right: 15, bottom: 15, left: 40},
+        width = tempWidth - margin.left - margin.right ,
+        height = tempheight - margin.top - margin.bottom ;
+        var radius = Math.min(width -80, height - 80) / 2;
+
+        var color = d3.scale.category10(); // Chart Color
+
+
+  var x = d3.scale.ordinal()
+      .rangeRoundBands([0, width], .1);
+
+    var y = d3.scale.linear()
+        .range([height, 0]);
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left");
+
+    //tip to show when mouseover
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+            return "<div style=' height:25px; width:145px; border-radius: 2px; background-color: #302929; padding-left: 8px; padding-top: 3px;'><strong style='color:white;'>IP&nbsp;:&nbsp;</strong><span style='color:red;'>" + d.name + "</span></div>";
+        });
+
+       
+
+
+    //when new data comes remove existing svg bar chart
+    //var chart = d3.select("#important_file_access_chart").remove();
+
+    //var chart = d3.select(".chart")
+    var chart = d3.select("#chart_div").append('svg')
+        .attr("id","important_file_access_chart")// id for svg chart
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        .style({'font-size': '10px', 'font-family': 'sans-serif',
+            'font-style': 'normal', 'font-variant': 'normal', 
+            'font-weight': 'normal'});
+
+
+    chart.call(tip);
+    //chart.call(modal);
+
+    x.domain(dataset.map(function(d) { return d.name; }));
+    y.domain([0, d3.max(dataset, function(d) { return d.value; })]);
+
+    //chart title
+    chart.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        .style("text-decoration", "underline")  
+        .text("Access Count based on IP");
+
+    //chart x axis
+    chart.append("g")
+        .attr("class", "x axis")
+        .call(xAxis)
+        .attr("transform", "translate(0," + height + ")")
+        .style({ 'stroke': '#464646', 'fill': 'none', 'stroke-width': '1px'})
+      .append("text")
+        .attr("transform", "translate("+(width + parseInt('10px', 10))+")rotate(90)")
+        .attr("y", 0)
+        .attr("x", 0)
+        .style("text-anchor", "start")
+        .text("IP");
+
+        //chart y axis
+    chart.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+        .style({ 'stroke': '#464646', 'fill': 'none', 'stroke-width': '1px'})
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0)
+        .attr("x", 6)
+        .style("text-anchor", "start")
+        .text("Count");
+
+    chart.selectAll(".bar")
+        .data(dataset)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.name); })
+        .attr("y", function(d) { return y(d.value); })
+        .attr("height", function(d) { return height - y(d.value); })
+        .attr("width", x.rangeBand())
+        .style('fill', '#4682B4')
+        .style('opacity','.8')
+        .on('mouseover', function(d) {           
+            tip.show(d);
+            d3.select(this).style("fill", "#00ff00")
+             d3.select(this).style('opacity','1');
+        })  
+        .on("mouseout", function(d) {
+              d3.select(this).style("fill", "#4682B4")
+              d3.select(this).style('opacity','.8');
+              tip.hide(d);
+        }) 
+        
+
+
+
+
+
+
+};
+
+function drawImportantFileAccessPieChart(dataset){
+
+  var tempWidth = 700, 
+        tempheight = 700;
+
+       var margin = {top: 40, right: 15, bottom: 15, left: 40},
+        width = tempWidth - margin.left - margin.right ,
+        height = tempheight - margin.top - margin.bottom ;
+        var radius = Math.min(width -80, height - 80) / 2;
+
+        var color = d3.scale.category10(); // Chart Color
+
+        //Tool Tip on pie chart
+        var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+            return "<div style=' height:25px; width:145px; border-radius: 2px; background-color: #0000ff; padding-left: 8px; padding-top: 3px;'><strong style='color:white;'>IP&nbsp;:&nbsp;</strong><span style='color:#00ff00;'>" + d.data.name + "</span></div>";
+        });
+
+
+
+        //Remove Previours cahrt
+        //d3.select("#important_file_access_chart").remove();
+
+
+        var chart = d3.select('#chart_div')
+          .append('svg')
+          .attr("id","important_file_access_chart")
+          .attr('width', width)
+          .attr('height', height)
+          .append('g')
+          .attr('transform', 'translate(' + (width/2 ) + 
+            ',' + (height / 2) + ')');
+
+                //chart title
+        chart.append("text")
+            .attr("x", 0)             
+            .attr("y", 0 -radius*11/10)
+            .attr("text-anchor", "right")  
+            .style("font-size", "36px") 
+            .style("position", "absolute")
+            .style("top", "100px") 
+            .style("text-decoration", "underline")  
+            .text("Students Exam marks");
+
+
+
+          chart.append("g")
+            .attr("class", "slices");
+          chart.append('g')
+            .attr("class", "labels");
+          chart.append('g')
+            .attr("class", "lines");
+
+            // basic chart radius
+        var arc = d3.svg.arc()
+          .innerRadius(radius- radius/2)
+          .outerRadius(radius)
+
+
+          //outer chart to append lables
+          var outerArc = d3.svg.arc()
+            .innerRadius(radius * 0.9)
+            .outerRadius(radius * 0.9);
+
+
+          // change chart when mouseover
+        var arcOver = d3.svg.arc()
+          .innerRadius(radius - radius/3)
+          .outerRadius(radius + radius/6);
+
+        var pie = d3.layout.pie()
+          .value(function(d) { return d.value; })
+          .sort(null);
+
+        chart.call(tip); 
+
+
+        var path = chart.selectAll('path')
+          .data(pie(dataset))
+          .enter()
+          .append('path')
+          .attr('d', arc)
+          .attr('fill', function(d, i) { 
+            return color(d.data.name);
+          })
+          .on('mouseover', function(d) {           
+                    tip.show(d);
+                    d3.select(this).transition()
+                        .duration(400)
+                        .attr("d", arcOver)
+                        d3.select(this).style("opacity", "1");
+                    //d3.select(this).style("fill", "#CA3A3A");
+                  })  
+          .on('mouseout', function(d) {
+                       // d3.select(this).style("fill", "#4682B4");
+                        tip.hide(d);
+                        d3.select(this).transition()
+                            .duration(400)
+                            .attr("d", arc)
+                            d3.select(this).style("opacity", ".8");
+                  }) 
+
+          .on("click", function(d){ 
+          	drawBarChart(d)
+            
+
+         });
+
+
+
+              /* ------- PIE SLICES -------*/
+              // var slice = chart.select(".slices").selectAll("path.slice")
+              //   .data(pie(dataset));
+
+              // slice.enter()
+              //   .insert("path")
+              //   .style("fill", function(d) { return color(d.data.name); })
+              //   .attr("class", "slice");
+
+              // slice   
+              //   .transition().duration(1000)
+              //   .attrTween("d", function(d) {
+              //     this._current = this._current || d;
+              //     var interpolate = d3.interpolate(this._current, d);
+              //     this._current = interpolate(0);
+              //     return function(t) {
+              //       return arc(interpolate(t));
+              //     };
+              //   })
+
+              // slice.exit()
+              //   .remove();
+
+              /* ------- TEXT LABELS -------*/
+
+              var text = chart.select(".labels").selectAll("text")
+                .data(pie(dataset));
+
+              text.enter()
+                .append("text")
+                .attr("dy", ".35em")
+                .text(function(d) {
+                  return d.data.name;
+                });
+              
+              function midAngle(d){
+                return d.startAngle + (d.endAngle - d.startAngle)/2;
+              }
+
+              text.transition().duration(1000)
+                .attrTween("transform", function(d) {
+                  this._current = this._current || d;
+                  var interpolate = d3.interpolate(this._current, d);
+                  this._current = interpolate(0);
+                  return function(t) {
+                    var d2 = interpolate(t);
+                    var pos = outerArc.centroid(d2);
+                    pos[0] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
+                    return "translate("+ pos +")";
+                  };
+                })
+                .styleTween("text-anchor", function(d){
+                  this._current = this._current || d;
+                  var interpolate = d3.interpolate(this._current, d);
+                  this._current = interpolate(0);
+                  return function(t) {
+                    var d2 = interpolate(t);
+                    return midAngle(d2) < Math.PI ? "start":"end";
+                  };
+                });
+
+              text.exit()
+                .remove();
+
+              /* ------- SLICE TO TEXT POLYLINES -------*/
+
+              var polyline = chart.select(".lines").selectAll("polyline")
+                .data(pie(dataset));
+              
+              polyline.enter()
+                .append("polyline");
+
+              polyline.transition().duration(1000)
+                .attrTween("points", function(d){
+                  this._current = this._current || d;
+                  var interpolate = d3.interpolate(this._current, d);
+                  this._current = interpolate(0);
+                  return function(t) {
+                    var d2 = interpolate(t);
+                    var pos = outerArc.centroid(d2);
+                    pos[0] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
+                    return [arc.centroid(d2), outerArc.centroid(d2), pos];
+                  };      
+                });
+              
+              polyline.exit()
+                .remove();
+              
+
+}
+
+
+</script>

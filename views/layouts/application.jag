@@ -14,7 +14,7 @@
   <link href="<%= urlPrefix %>assets/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
 
   <link href="<%= urlPrefix %>assets/css/animate.css" rel="stylesheet">
-  <link href="<%= urlPrefix %>assets/css/style.min.css" rel="stylesheet">
+  <link href="<%= urlPrefix %>assets/css/style.css" rel="stylesheet">
   
   <!-- Data Tables -->
   <link href="<%= urlPrefix %>assets/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
@@ -77,13 +77,13 @@
         %>
       </div>
       
-      <div id="pjax-container">
+      <div>
         <%
         include('../' + data.container_path + '.jag') 
         %>
 
         <%
-        include("../shared/_summary_slider.jag") 
+        //include("../shared/_summary_slider.jag") 
         %>
         
         <div style="height: 100px; margin-bottom: 100px;"></div>

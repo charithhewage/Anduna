@@ -1,0 +1,9 @@
+<%
+(function() {
+		response.contentType = "application/json";
+    response.characterEncoding = "UTF-8";
+    response.content = "hello";
+
+} ()); 
+
+%>
