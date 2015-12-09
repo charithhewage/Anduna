@@ -14,12 +14,12 @@
 }() )
 
 
-
 function index(){
   include("gadgets_controller.jag");
 
   data = { 
       container_path: 'home/index', 
+      content_layout: 'summary_layout', 
       enabled_stats_gadgets: enabled_stats_gadgets,
   };
   include("../views/layouts/application.jag");  

@@ -32,13 +32,15 @@ function index(){
 
   if(get_pages.length == 0){
     data = { 
-      container_path: 'home/dummy_page'
+      container_path: 'home/dummy_page',
+      content_layout: 'summary_layout'
     };
 
   }
   else{
     data = { 
       container_path: 'home/index', 
+      content_layout: 'summary_layout',
       enabled_stats_gadgets: enabled_stats_gadgets,
     };
   }

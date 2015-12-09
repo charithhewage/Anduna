@@ -2,10 +2,8 @@
 
 
 
-
-
 <!-- Modal -->
-<div class="modal fade" id="Aleart404Model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="Aleart404Detail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

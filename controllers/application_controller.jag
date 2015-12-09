@@ -1,4 +1,9 @@
 <%
+//Initialized Function will be called
+(function () {
+defaultLayout();
+
+})();
 
 function IsAuthorized(){
   current_user = session.get('user')
@@ -16,6 +21,13 @@ function actionMapper(){
 	request.getParameter("q") == null ? map =  "index" : map = request.getParameter("q")
 	return map;
 	
+}
+
+function defaultLayout(){
+  data = { 
+    container_path: 'index', 
+    content_layout: 'default_layout' 
+  };
 }
 
 %>
