@@ -15,9 +15,9 @@
 	  	bandwidth_summary	: "Bandwidth Summary",
 	  	//attack_404	: "404 attack",
 	  	threats_summary : "Threats Summary",
-	  	cpu_info : "CPU Info",
-	  	memory_info : "Memory Info",
-	    ip_info_map : "IP InfoMap",
+	  	//cpu_info : "CPU Info",
+	  	//memory_info : "Memory Info",
+	    //ip_info_map : "IP InfoMap",
 		}
   }
   else if( splitedURI[2] == "securities"){
