@@ -10,16 +10,22 @@
 	if( splitedURI[2] == "dashboards"){
   	enabled_stats_gadgets = {	
 	  	proxy_log_visits :	"Proxy Log Visits",
+	  	//important_files_access :	"Important Files Access",
 	  	access_log_hits : "Access Log Hits ",
 	  	bandwidth_summary	: "Bandwidth Summary",
-	  	//testwidget: "Test Widget"
+	  	//attack_404	: "404 attack",
+	  	threats_summary : "Threats Summary",
+	  	cpu_info : "CPU Info",
+	  	memory_info : "Memory Info",
+	    ip_info_map : "IP InfoMap",
 		}
   }
   else if( splitedURI[2] == "securities"){
   	enabled_stats_gadgets = {	
-	  	proxy_log_visits :	"Proxy Log Visits",
+	  	//proxy_log_visits :	"Proxy Log Visits",
+	  	attack_404	: "404 attack",
 	  	important_files_access :	"Important Files Access",
-	  	access_log_hits : "Access Log Hits ",
+	  	//access_log_hits : "Access Log Hits ",
 	  	//bandwidth_summary	: "Bandwidth Summary",
 	  	alerts: "Alerts"
 	  	//testwidget: "Test Widget"

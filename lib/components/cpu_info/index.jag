@@ -1,0 +1,17 @@
+<link href="lib/components/cpu_info/gauge_style.css" rel="stylesheet">
+<script src="lib/components/cpu_info/gauge.js"></script>
+<script src="lib/components/cpu_info/load_gauge.js"></script>
+
+
+<div class="col-md-2_new col-md-2">
+	<div class="ibox float-e-margins">
+    	<div class="ibox-title">
+            <span class="label label-info pull-right">System Info</span>
+            <h5>CPU</h5>
+        </div>
+        <div class="ibox-content">
+            <div id="power-gauge"></div>
+        </div>
+    </div>
+    
+</div>

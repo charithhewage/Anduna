@@ -1,15 +1,35 @@
-<script src="lib/components/proxy_log_visits/assets/js/dao.js"></script>
+<script src="lib/components/proxy_log_visits/assets/js/dao_2.js"></script>
 <script src="lib/components/proxy_log_visits/assets/js/charts/draw_visits_chart.js"></script>
 <script src="lib/components/proxy_log_visits/assets/js/charts/draw_pie_chart.js"></script>
+
+<style>
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.x.axis path {
+  display: none;
+}
+
+</style>
+
 
 <div class="col-md-2_new col-md-2">
     <div class="ibox float-e-margins">
         <div id="type"class="ibox-title">
-            <span class="label label-success pull-right">Today Visits</span>
-            <h5>Visits</h5>
-            <div class="ibox-tools">
+            <!-- <span class="label label-success pull-right">Today Visits</span> -->
+            <h5>Internet Usage &nbsp;<span class="fa fa-question-circle pointer" data-toggle="tooltip" data-placement="bottom" title="Internet Usage and details by university students"></span></h5>
+            <!-- <div class="ibox-tools">
                 <a class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-wrench"></i>
+                <i class="fa fa-wrench"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#" onClick="show_today_visits()">Today Visits</a>
@@ -25,24 +45,27 @@
                     <li><a href="#" onClick="show_today_success_visits()">Today Successed Visits</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
-        <div class="ibox-content">
+
+        <div class="ibox-content" id="plVisits">
             <div id="visits" >
-                <h1 class="no-margins">220</h1>
-                <small>Yesterday</small>
-                <h4 class="no-margins">210</h4>
-                <h3 style="color:#7FFF00">4.32%</h3>
+              <div class="JS_container"></div>
+
+              <div class="btn-group m10xtop rw100x ">
+                <a href="#widgetMoreInfo" class="btn btn-primary btn-xs dropdown-toggle fright">More <span class="caret"></span></a>
+              </div>
             </div>
-            
-            <div id="more"><a class="btn-more-infor btn btn-default btn-rounded" href="#">More</a></div>
+
+            <!-- <div id="more"><a class="btn-more-infor btn btn-default btn-rounded" href="#">More</a></div> -->
         </div>
-        <div id="panel" class="ibox-content" style="display: none;">
-            
+
+        <!-- <div id="panel" class="ibox-content" style="display: none;">
+
             <span>All Visits Graph</span>
             <div class="ibox-tools">
                 <a class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-wrench"></i>
+                <i class="fa fa-wrench"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#" onClick="show_today_visits()">Bar Chart</a>
@@ -52,16 +75,17 @@
                 </ul>
                 </br>
             </div>
-            <!-- <div id="visitsChart" style="height:100px">
-        
-            </div> -->
-
-        </div>
+            <div id="visitsChart" style="height:100px">
+                        
+            </div>
+        </div> -->
     </div>
 </div>
-
 <script>
 $(document).ready( function(){
     $("#proxy_log_visits .ibox-content").append('<div id="visitsChart" style="height:300px"></div>')
+})
+$(function () {
+$('[data-toggle="tooltip"]').tooltip()
 })
 </script>

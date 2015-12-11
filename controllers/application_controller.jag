@@ -1,7 +1,7 @@
 <%
 //Initialized Function will be called
 (function () {
-defaultLayout();
+  defaultLayout();
 
 })();
 
@@ -12,7 +12,7 @@ function IsAuthorized(){
   }
   else{
     data = { container_path: 'users/sessions/new'};
-    include(urlPrefix+ "../views/layouts/no_user.jag");
+    include(urlPrefix + "../views/layouts/no_user.jag");
   }
 }
 
@@ -24,10 +24,15 @@ function actionMapper(){
 }
 
 function defaultLayout(){
-  data = { 
-    container_path: 'index', 
-    content_layout: 'default_layout' 
-  };
+  current_user = session.get('user')
+  
+  if(current_user){
+    data = { 
+      container_path: 'index', 
+      content_layout: 'default_layout' 
+    };
+  }
+  
 }
 
 %>

@@ -3586,7 +3586,7 @@ code {
 .ibox-content {
   background-color: #ffffff;
   color: inherit;
-  padding: 15px 20px 20px 20px;
+  padding: 15px 15px 15px 15px;
   border-color: #e7eaec;
   border-image: none;
   border-style: solid solid none;
@@ -7491,3 +7491,31 @@ body.skin-3 {
 .admin.wrapper{ padding: 10px 10px 40px}
 .admin .page-title{ margin: 0 -10px 10px -10px; border-bottom: 1px solid #E6E6E6;padding: 10px 20px 20px; }
 .admin .page-title h5{ margin: 0; padding: 0 }
+.pointer { cursor: pointer;}
+
+.border-bottom{ border-bottom: 1px solid #e7eaec}
+
+
+/********* float **********/
+.fleft{ float: left !important;}
+.fright{ float: right !important;}
+
+/******* Margins********/
+.m10xtop{ margin-top: 10px;}
+.m20xtop{ margin-top: 20px;}
+.m30xtop{ margin-top: 30px;}
+.m40xtop{ margin-top: 40px;}
+.m50xtop{ margin-top: 50px;}
+.m60xtop{ margin-top: 60px;}
+
+/********** Width **********/
+.rw100x{ width: 100%}
+
+
+/****** Font Colors ***********/
+
+.low { color: #1c84c6}
+.normal { color: #1ab394}
+.high { color: #f8ac59 }
+.warning { color: #FF8E01}
+.danger { color: #ed5565}

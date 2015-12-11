@@ -3,7 +3,6 @@
   var application = require('application_controller.jag')
   //Check authorized User
   application.IsAuthorized()
-
   //Select the method
   try{
     session.get("user") ? this[application.actionMapper()]() : ""
@@ -12,8 +11,6 @@
   }
   
 }() )
-
-
 
 function index(){
   include("gadgets_controller.jag");
