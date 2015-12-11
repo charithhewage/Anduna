@@ -1,0 +1,22 @@
+<%
+var log = new Log();
+log.info("Access Summary Server get details grup by date");
+
+
+try{
+
+    var result = db.query("SELECT SUBSTRING_INDEX(date_time, ':', 1) AS date, COUNT(date_time) AS totalcount, SUM(size) AS request_size, browserInfo FROM AL_LastHourImportantFileAccessInfo GROUP BY SUBSTRING_INDEX(date_time, ':', 1) ");
+ //print(result);
+    response.contentType = "application/json";
+    response.characterEncoding = "UTF-8";
+    response.content = result;
+}
+catch(e){
+    print(e.toString()); // TODO: use log.info instead of printing error
+}
+finally{
+    db.close();
+}
+
+
+%>
