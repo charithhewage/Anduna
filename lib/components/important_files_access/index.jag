@@ -6,6 +6,8 @@
 
 <link href="lib/components/important_files_access/assets/css/draw_important_access_data_group_by_request.css" rel="stylesheet">
 
+<link href="lib/components/important_files_access/assets/css/draw_important_access_data_group_by_date.css" rel="stylesheet">
+
 <script src="lib/components/important_files_access/assets/js/dao.js"></script>
 
 <script src="lib/components/important_files_access/assets/js/charts/draw_imortant_file_access_bar_chart.js"></script>
@@ -15,6 +17,8 @@
 <script src="lib/components/important_files_access/assets/js/charts/draw_important_access_data_group_by_browser.js"></script>
 
 <script src="lib/components/important_files_access/assets/js/charts/draw_important_access_data_group_by_request.js"></script>
+
+<script src="lib/components/important_files_access/assets/js/charts/draw_important_access_data_group_by_date.js"></script>
 
 
 
@@ -45,7 +49,7 @@
           </li>
           <li><a href="#" onClick="showimportantFileAccessDataTable()">Important File Access Table </a>
           </li>
-          <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Date </a>
+          <li><a href="#" onClick="get_data_group_by_date()">Access Count based on Date </a>
           </li>
           <li><a href="#" onClick="showimportantFileAccessAlData()">Show Full Log File </a>
           </li>
