@@ -1,36 +1,58 @@
+<script>
+
+// $('.onoffswitch-checkbox').change(function() {
+//   console.log( "Handler for .change() called." );
+//   var data = $( this ).data("name")
+  
+//  //  $.post( "controllers/admin/widgeten_controller.jag", function( data ) {
+//  //  	console.log( "Data Loaded: " + data );
+// 	// });
+
+//   $.getJSON( "admin/widgeten", data )
+//   .done(function() {
+//     console.log( "JSON Data: ");
+//   })
+//   .fail(function( jqxhr, textStatus, error ) {
+//     var err = textStatus + ", " + error;
+//     console.log( "Request Failed: " + err );
+// });
+
+
+
+// });
+</script>
+
+
 <div class="row border-bottom white-bg">
 <%
 	include_once("../shared/_main_nav.jag")
 %>
-	<div class="col-lg-6">
-	  <table class="table table-hover margin bottom">
-	    <thead>
-	      <tr>
-	        <th style="width: 70%">Widget Name</th>
-	        <th>State</th>
-	      </tr>
-	     </thead>
-	    
-	    <tbody> 
+
+	<div class="col-lg-12">
+	  <div class="admin wrapper wrapper-content">
+	    <div class="row">
+	    	<div class="page-title">
+          <h5>Widgets</h5>
+             
+          </div>
+
+	    	<div class="col-md-4 item-list-left">
+	    		<div class="feed-activity-list">
 	    <%
 (function(){
 
 	var state;
 for (var item in data.widgets){
 	data.widgets[item]['state'] == true ? state = "checked" : state = ""
-	print('<tr>')
-	print('<td>'+data.widgets[item]['title']+'</td>')
-	print('<td><div class="switch">')
-	print('<div class="onoffswitch">')
-	print('<input type="checkbox" name="collapsemenu" '+state+' class="onoffswitch-checkbox" id="s'+item+'">')
+	print('<a href="'+urlPrefix+'admin/widgets?q=show&name='+item+'"><div class="feed-element">')
+	print('<div class="media-body ">')
+	print('<strong>'+data.widgets[item]['title']+'</strong>')
+	print('</div>')
 
 
-	print('<label class="onoffswitch-label" for="s'+item+'">')
-	print('<span class="onoffswitch-inner"></span>')
-	print('<span class="onoffswitch-switch"></span>')
-	print('</label></div></div></td>')
-	//print('<a href="#" class="list-group-item">'+data.widgets[item]['title']+'<span class="badge">'+state+'</span></a>') 
-	print('</tr>')
+	//print('<input type="checkbox" data-name="'+item+'" name="collapsemenu" '+state+' class="onoffswitch-checkbox" id="s_'+item+'">')
+
+	print('</div></a>')
 
 }
 
@@ -38,13 +60,66 @@ for (var item in data.widgets){
 
 }())
 %>
-	    
-	    </tbody>
-	  </table>
-	</div>
+    
+    
 
+
+</div>
+	    	</div>
+	    	<div class="col-md-8">
+<%
+if(data.current_widget){
+	var widget_data = require('../../../lib/components/'+data.current_widget+'/info.json')
+	
+}
+
+%>
+
+<div class="mail-box-header">
+ <!--  <div class="pull-right tooltip-demo">
+      <a href="mail_compose.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Reply"><i class="fa fa-reply"></i> Reply</a>
+      <a href="#" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Print email"><i class="fa fa-print"></i> </a>
+      <a href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Move to trash"><i class="fa fa-trash-o"></i> </a>
+  </div> -->
+  <h2>
+      <% 
+      widget_data ? print(widget_data.name) : ""
+      %>
+  </h2>
+  <div class="mail-tools tooltip-demo m-t-md">
+
+
+      <h3>
+          <span class="font-noraml">Author: </span> 
+          <%
+          	widget_data ? print(widget_data.author) : ""
+          %>
+      </h3>
+      <h5>
+          <!-- <span class="pull-right font-noraml">10:15AM 02 FEB 2014</span> -->
+          <span class="font-noraml">Version: </span>
+          <%
+          	widget_data ? print(widget_data.version) :  ""
+          %>
+      </h5>
+  </div>
+</div>
+<div class="mail-box">
+	<div class="mail-body">
+	<%
+  	widget_data ? print(widget_data.description) : ""
+  %>
+	</div>
 </div>
 
 
+
+
+	    	</div>
+	    </div>
+	  </div>      
+	</div>
+
+</div><!-- Main Container-->
 
 

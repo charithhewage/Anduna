@@ -9,7 +9,6 @@ var db, result;
 
 var log = new Log();
 
-(function(){
   
   var result;
   var requestedController;
@@ -61,8 +60,6 @@ var log = new Log();
         assetsURI = originalURI.replace(new RegExp('(.*)(' + item + ')(\/)(.*)'), '$2$3$4')
         requestedController = "../" + assetsURI
         isWhitelisted = true
-        log.info("called to assets")
-        log.info(requestedController)
         break;
       }
     }
@@ -93,14 +90,13 @@ var log = new Log();
 
   //include the controller
   try{
-    requestedController != undefined ? include(requestedController) : ""
+    log.info("x")
+    requestedController != undefined ? include_once(requestedController) : ""
     //print(requestedController + '<br>')
   }catch(e){
     print(e.toString());
   }
   
-
-}());// Init function
 
 
 %>

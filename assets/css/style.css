@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=en");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&lang=en");
 /*
  *
  *   INSPINIA - Responsive Admin Theme
@@ -157,7 +157,7 @@ h5 {
 }
 .nav-header {
   padding: 33px 25px;
-  background: url("patterns/header-profile.png") no-repeat;
+ /* background: url("patterns/header-profile.png") no-repeat;*/
 }
 .pace-done .nav-header {
   transition: all 0.5s;
@@ -3586,7 +3586,7 @@ code {
 .ibox-content {
   background-color: #ffffff;
   color: inherit;
-  padding: 15px 20px 20px 20px;
+  padding: 15px 15px 15px 15px;
   border-color: #e7eaec;
   border-image: none;
   border-style: solid solid none;
@@ -7485,3 +7485,37 @@ body.skin-3 {
 /******** Custom Styles **************/
 
 #footer{ padding-top: 50px;}
+
+.admin-inner-nav{ background: #F1F1F1 !important; border-bottom: 2px solid #E6E6E6; margin-bottom: 0;}
+.item-list-left{ border-right: 4px solid #eee; height: 500px; overflow-y: scroll }
+.admin.wrapper{ padding: 10px 10px 40px}
+.admin .page-title{ margin: 0 -10px 10px -10px; border-bottom: 1px solid #E6E6E6;padding: 10px 20px 20px; }
+.admin .page-title h5{ margin: 0; padding: 0 }
+.pointer { cursor: pointer;}
+
+.border-bottom{ border-bottom: 1px solid #e7eaec}
+
+
+/********* float **********/
+.fleft{ float: left !important;}
+.fright{ float: right !important;}
+
+/******* Margins********/
+.m10xtop{ margin-top: 10px;}
+.m20xtop{ margin-top: 20px;}
+.m30xtop{ margin-top: 30px;}
+.m40xtop{ margin-top: 40px;}
+.m50xtop{ margin-top: 50px;}
+.m60xtop{ margin-top: 60px;}
+
+/********** Width **********/
+.rw100x{ width: 100%}
+
+
+/****** Font Colors ***********/
+
+.low { color: #1c84c6}
+.normal { color: #1ab394}
+.high { color: #f8ac59 }
+.warning { color: #FF8E01}
+.danger { color: #ed5565}

@@ -1,0 +1,58 @@
+<div class="row">
+<%
+	include_once('../../'+ data.container_path + '.jag')
+%>
+</div> <!-- Row one-->
+
+
+
+<div class="row">
+  <div class="col-lg-9" id="widgetMoreInfo">
+  
+  <!-- Widget More Information goes here-->
+
+    <!-- <div class="ibox float-e-margins">
+      <div class="ibox-content" style="padding:0">
+				<div class="tabs-container" style="min-height:300px">
+				  <div class="tabs-left">
+				      <ul class="nav nav-tabs">
+				          <li class="active"><a data-toggle="tab" href="#tab-6" aria-expanded="true">Today Visits</a></li>
+				          <li class=""><a data-toggle="tab" href="#tab-7" aria-expanded="false">Average Visits</a></li>
+				          <li class=""><a data-toggle="tab" href="#tab-7" aria-expanded="false">Today Unique Visits</a></li>
+				          <li class=""><a data-toggle="tab" href="#tab-7" aria-expanded="false">Highest Visited Site</a></li>
+				          <li class=""><a data-toggle="tab" href="#tab-7" aria-expanded="false">Today Failed Visits</a></li>
+				      </ul>
+				      <div class="tab-content ">
+				          <div id="tab-6" class="tab-pane active">
+				              <div class="panel-body">
+			                  <strong>Lorem ipsum dolor sit amet, consectetuer adipiscing</strong>
+			                  <p>A wonderful serenity has taken possession of my entire soul, like these</p>
+
+				              </div>
+				          </div>
+				          <div id="tab-7" class="tab-pane">
+				              <div class="panel-body">
+				                  <strong>Donec quam felis</strong>
+
+				                  <p>Thousand unknown plants are noticed by me</p>
+
+				              </div>
+				          </div>
+				      </div>
+
+				  </div>
+
+				</div>
+      </div>
+    </div> -->
+	</div>
+
+
+	<%
+		include('../../' + widgetPath + 'memory_info/index.jag')
+		%>
+
+	<%
+		include('../../' + widgetPath + 'cpu_info/index.jag')
+		%>
+</div> <!-- Row two-->

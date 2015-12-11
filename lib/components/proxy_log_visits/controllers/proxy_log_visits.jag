@@ -4,7 +4,7 @@ log.info("PL Daily Summary");
 
 try{
 
-  var result = db.query("SELECT * FROM PL_DailySummary");
+  var result = db.query("SELECT * FROM PL_DailySummary ORDER BY id DESC");
   log.info(result);
   response.contentType = "application/json";
   response.characterEncoding = "UTF-8";

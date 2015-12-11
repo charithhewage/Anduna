@@ -14,7 +14,7 @@
   <link href="<%= urlPrefix %>assets/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
 
   <link href="<%= urlPrefix %>assets/css/animate.css" rel="stylesheet">
-  <link href="<%= urlPrefix %>assets/css/style.min.css" rel="stylesheet">
+  <link href="<%= urlPrefix %>assets/css/style.css" rel="stylesheet">
   
   <!-- Data Tables -->
   <link href="<%= urlPrefix %>assets/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
@@ -34,6 +34,9 @@
   <script src="<%= urlPrefix %>assets/js/jquery-2.1.1.js"></script>
   <script src="<%= urlPrefix %>assets/js/jquery.pjax.js"></script>
   <script src="<%= urlPrefix %>assets/js/bootstrap.min.js"></script>
+  <script src="<%= urlPrefix %>assets/js/websocket.config.js"></script>
+
+  <script src="<%= urlPrefix %>assets/js/navigations.js"></script>
   <script src="<%= urlPrefix %>assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
   <script src="<%= urlPrefix %>assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
   <script src="<%= urlPrefix %>assets/js/d3.min.js"></script>
@@ -58,6 +61,16 @@
 
   <script src="<%= urlPrefix %>assets/js/navigations.js"></script>
 
+<style type="text/css">
+.alerts-container{ background: none; position: absolute; right: 0; height: 500px; bottom: 0; z-index: 5000000; width: 400px; }  
+.alert-box {min-height: 80px; width: 400px; position: fixed; bottom: 0; padding: 10px; color: #FFF; border-radius: 0px; margin-bottom: 0;}
+.alert-header h2{ padding: 0; margin: 0; padding-bottom: 10px; font-weight: bold; font-size: 15px;}
+
+.alert-box a.close{ position: relative; float: right; right: 0; top: -28px; font-size: 15px; opacity: 0.2;}
+.actions-container .btn{ float: right;}
+
+</style>
+
 </head>
 
 <body>
@@ -67,7 +80,6 @@
       <% 
       include("../shared/_side_nav.jag") 
       %>
-
     </div>
     
     <div id="page-wrapper" class="gray-bg">
@@ -77,13 +89,14 @@
         %>
       </div>
       
-      <div id="pjax-container">
+      <div>
+
         <%
-        include('../' + data.container_path + '.jag') 
+          include('inner_layouts/_' + data.content_layout + '.jag') 
         %>
 
         <%
-        include("../shared/_summary_slider.jag") 
+        //include("../shared/_summary_slider.jag") 
         %>
         
         <div style="height: 100px; margin-bottom: 100px;"></div>
@@ -112,29 +125,21 @@
   </div>
 
 
+<div class="alerts-container hide" id="alertsContainer">
+  <!-- <div class="alert alert-box alert-danger" role="alert">
+    <div class="alert-header">
+      <h2><span class="fa fa-warning"></span> MySQL Attack identified</h2>
+      
+      <a type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times"></i></span></a>
+    </div>
+    <div class="alert-body">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+    <div class="actions-container">
+      <a href="#" class="btn btn-default btn-xs">More</a>
+    </div>
+  </div> -->
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" >
-  
-  $(document).pjax('a', '#pjax-container')
-</script>
 </body>
 </html>

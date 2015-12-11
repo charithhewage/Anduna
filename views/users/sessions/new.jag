@@ -1,7 +1,7 @@
 <div>
   <h3>Dashboard | Sign In</h3>
   
-  <form class="m-t" role="form" action="sessions/login" method="post">
+  <form class="m-t" role="form" action="<%= urlPrefix %>sessions/login" method="post">
     <div class="form-group">
       <input type="email" name="email" class="form-control" placeholder="Username" required="">
     </div>

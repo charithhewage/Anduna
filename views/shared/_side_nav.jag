@@ -26,7 +26,7 @@
         </div>
       </li>
 
-      <li id="menu_item_1">
+     <!--  <li id="menu_item_1">
         <a href="<%= urlPrefix %>dashboards"><i class="fa fa2 fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
       </li>
 
@@ -71,6 +71,21 @@
           <li><a href="#">Widget List</a></li>
           <li><a href="#">Customize Widgets</a></li>
         </ul>
+      </li>
+      <li> -->
+        
+        <%
+
+        var pages = session.get("pages")
+
+        for (var key in pages) {
+          if (pages.hasOwnProperty(key)) {
+            print("<li>")
+            print('<a href="'+urlPrefix+pages[key].title_name+'"><i class="'+pages[key].icon_name+'"></i> <span class="nav-label">'+pages[key].title+'</span><span class="fa arrow"></span></a>')
+            print("</li>")
+          }
+        }
+        %>
       </li>
     </ul>
   </div>
