@@ -27,8 +27,11 @@
 	  	important_files_access :	"Important Files Access",
 	  	//access_log_hits : "Access Log Hits ",
 	  	//bandwidth_summary	: "Bandwidth Summary",
-	  	alerts: "Alerts"
-	  	//testwidget: "Test Widget"
+	  	alerts: "Alerts",
+	  	//testwidget: "Test Widget",
+	  	proxy_log_summery :	"proxy log summery",
+	  	proxy_log_site_monitor :	"proxy log site monitor",
+	  	security_summery :	"security summery details",
 		}
   }
 

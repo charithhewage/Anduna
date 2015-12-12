@@ -127,7 +127,7 @@
   </div>
 
 
-<div class="alerts-container" id="alertsContainer" style="" >
+<div class="alerts-container hide" id="alertsContainer" style="" >
  <!--  <div id="alert_4" style="background-color:black;display:block;height: 25%;"></div>
   <div id="alert_3" style="background-color:red;display:block;height: 25%;"></div>
   <div id="alert_2" style="background-color:blue;display:block;height: 25%;"></div>

@@ -1,0 +1,22 @@
+<%
+var log = new Log();
+log.info("PL details grup by website");
+
+
+try{
+
+    var result = db.query("SELECT date_time, clientIpAddress, resultCodes, size, requestMethod, fullUrl, hierarchyCode, type FROM PL_SM_LastHourLogs");
+ //print(result);
+    response.contentType = "application/json";
+    response.characterEncoding = "UTF-8";
+    response.content = result;
+}
+catch(e){
+    print(e.toString()); // TODO: use log.info instead of printing error
+}
+finally{
+    db.close();
+}
+
+
+%>

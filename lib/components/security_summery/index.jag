@@ -1,0 +1,58 @@
+<link href="lib/components/security_summery/assets/css/styles.css" rel="stylesheet">
+<!-- <link href="lib/components/security_summery/assets/css/pl_access_website_based_pie_chart.css" rel="stylesheet"> -->
+
+<script src="lib/components/security_summery/assets/js/dao.js"></script>
+<!-- <script src="lib/components/security_summery/assets/js/charts/pl_access_website_based_pie_chart.js"></script> -->
+
+<div id="container" class="col-md-12 resizable-box resizable" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");'>
+    <div class="ibox float-e-margins">
+        <!-- <div>-->
+        <div class="ibox-title">
+            <h5>Security Summery</h5>
+            <div class="ibox-tools">
+                <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+                </a>
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-wrench"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#" onClick="showimportantFileAccessDataTable2()">Importnat File Access Data</a>
+                    </li>
+                    <li><a href="#" onClick="show404reqestTable2()">404 Access Data</a>
+                    </li>
+                    
+                </ul>
+                <a class="close-link">
+                <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+        <div id="PL_monitor_div" class="ibox-content">
+            <div id="chart_for_pl_monitor" style="min-height:300px; margin:0; padding:0;"></div>
+           
+
+            <!-- table --> 
+         <table id="important_file_access_table">
+           <thead id="important_file_access_table_head"></thead>
+           <tbody id="important_file_access_table_body"></tbody>
+         </table>  
+      <!-- table end  -->
+    <!-- table end  -->
+			<!-- info modal load -->
+			
+
+			<!-- modal end / full info modal starts-->
+			
+			<!---modal end -->
+			<!--- modal ends -->
+
+		</div>
+	</div>
+</div>
+<!-- Widget Hidden data -->
+<div id="SecSumData">
+	<input type="hidden" id="activeTab" value="" />
+	<input type="hidden" id="" value="" />
+	<input type="hidden" id="" value="" />
+</div>

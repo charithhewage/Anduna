@@ -1,0 +1,22 @@
+<%
+var log = new Log();
+log.info("Access Summary Server");
+
+
+try{
+
+    var result = db.query("SELECT clientIpAddress, date_time, requestedFile, resultCode, size, url, browserInfo FROM AL_LastHour404Request" );
+ //print(result);
+    response.contentType = "application/json";
+    response.characterEncoding = "UTF-8";
+    response.content = result;
+}
+catch(e){
+    print(e.toString()); // TODO: use log.info instead of printing error
+}
+finally{
+    db.close();
+}
+
+
+%>
