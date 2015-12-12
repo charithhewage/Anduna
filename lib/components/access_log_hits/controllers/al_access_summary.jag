@@ -4,7 +4,7 @@ log.info("AL Access summary");
 
 try{
 
-  var result = db.query("SELECT DISTINCT * FROM AL_Access_Summary");
+  var result = db.query("SELECT DISTINCT * FROM AL_Access_Summary LIMIT 5");
   log.info(result);
   response.contentType = "application/json";
   response.characterEncoding = "UTF-8";

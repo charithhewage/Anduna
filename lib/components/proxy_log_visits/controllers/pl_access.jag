@@ -4,7 +4,7 @@ log.info("PL Access Summary - Max visit site");
 
 try{
 
-  var result = db.query("SELECT DISTINCT * FROM PL_AccessSummary");
+  var result = db.query("SELECT DISTINCT * FROM PL_AccessSummary LIMIT 5");
   log.info(result);
   response.contentType = "application/json";
   response.characterEncoding = "UTF-8";
