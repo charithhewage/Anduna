@@ -1,0 +1,20 @@
+<%
+var log = new Log();
+log.info("AL Access summary");
+
+try{
+
+  var result = db.query("SELECT DISTINCT * FROM `AL_DataAccessSummary");
+  log.info(result);
+  response.contentType = "application/json";
+  response.characterEncoding = "UTF-8";
+  response.content = result;
+}
+catch(e){
+    print(e.toString()); // TODO: use log.info instead of printing error
+}
+finally{
+     db.close(); }
+
+
+%>
