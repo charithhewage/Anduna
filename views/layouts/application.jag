@@ -35,6 +35,8 @@
   <script src="<%= urlPrefix %>assets/js/jquery.pjax.js"></script>
   <script src="<%= urlPrefix %>assets/js/bootstrap.min.js"></script>
   <script src="<%= urlPrefix %>assets/js/websocket.config.js"></script>
+  <script src="<%= urlPrefix %>lib/components/alerts/assets/js/websocket.js"></script>
+  
 
   <script src="<%= urlPrefix %>assets/js/navigations.js"></script>
   <script src="<%= urlPrefix %>assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
@@ -125,20 +127,11 @@
   </div>
 
 
-<div class="alerts-container hide" id="alertsContainer">
-  <!-- <div class="alert alert-box alert-danger" role="alert">
-    <div class="alert-header">
-      <h2><span class="fa fa-warning"></span> MySQL Attack identified</h2>
-      
-      <a type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times"></i></span></a>
-    </div>
-    <div class="alert-body">
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-    </div>
-    <div class="actions-container">
-      <a href="#" class="btn btn-default btn-xs">More</a>
-    </div>
-  </div> -->
+<div class="alerts-container" id="alertsContainer" style="" >
+ <!--  <div id="alert_4" style="background-color:black;display:block;height: 25%;"></div>
+  <div id="alert_3" style="background-color:red;display:block;height: 25%;"></div>
+  <div id="alert_2" style="background-color:blue;display:block;height: 25%;"></div>
+  <div id="alert_1" style="background-color:green;display:block;height: 25%;"></div> -->
 </div>
 
 </body>

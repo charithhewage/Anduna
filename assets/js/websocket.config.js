@@ -70,12 +70,13 @@ var webSocketOnClose =function (e) {
 var webSocketOnMessage = function(message) {
   console.log("websocket on message");
   var info = $.parseJSON(message.data);
-  console.log(message);
+  console.log("message"+message);
 
   this.showAlert = function(){
     console.log('show Alert');
-    window[info.id]();
+    //window[info.id]();
     //$('#right-sidebar').toggleClass('sidebar-open');
+    showAllAlerts(info);
   }
   this.showAlert(info)
 }
