@@ -1,58 +1,48 @@
 <script src="lib/components/threats_summary/assets/js/dao.js"></script>
 <script src="lib/components/threats_summary/assets/js/charts/draw_threats_charts.js"></script>
 
-<div class="col-md-2_new col-md-2">
-                <div class="ibox float-e-margins">
-                    <div id="type4"class="ibox-title">
-                        <span class="label label-info pull-right">Today Threats</span>
-                        <h5>Threats</h5>
-                        <div class="ibox-tools">
-                            <a class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#" onClick="show_total_threats()">Today Total Threats</a>
-                                </li>
-                                <li><a href="#" onClick="show_proxylog_threats()">Total Proxy Log Threats</a>
-                                </li>
-                                <li><a href="#" onClick="show_accesslog_threats()">Total Access Log Threats</a>
-                                </li>
-                                <li><a href="#" onClick="show_average_proxylog_threats()">Average Proxy Log Threats</a>
-                                </li>
-                                <li><a href="#" onClick="show_average_accesslog_threats()">Average Access Log Threats</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div id="threats" >
-                            <h1 class="no-margins">220</h1>
-                            <small>Yesterday</small>
-                            <h4 class="no-margins">210</h4>
-                            <h3 style="color:#7FFF00">4.32%</h3>
-                        </div>
-                        
-                        <div id="more4"><a class="btn-more-infor btn btn-default btn-rounded" href="#">More</a></div>
-                    </div>
-                    <div id="panel4" class="ibox-content" style="display: none;">
-                        
-                        <span>All Hits Graph</span>
-                        <div class="ibox-tools">
-                            <a class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#" onClick="show_today_visits()">Bar Chart</a>
-                                </li>
-                                <li><a href="#" onClick="show_average_visits()">Pie Chart</a>
-                                </li>
-                            </ul>
-                            </br>
-                        </div>
-                        <div id="threatsChart" style="height:100px">
-                    
-                        </div>
+<style>
 
-                    </div>
-                </div>
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.x.axis path {
+  display: none;
+}
+
+</style>
+
+
+<div class="col-md-2_new col-md-2">
+    <div class="ibox float-e-margins">
+        <div id="type"class="ibox-title">
+            <h5>Threats Summary &nbsp;<span class="fa fa-question-circle pointer" data-toggle="tooltip" data-placement="bottom" title="Summary of Possible Security Breaches and Warnings"></span></h5>
+        </div>
+
+        <div class="ibox-content" id="threatsDetails">
+            <div id="threats" >
+              <div class="JS_container"></div>
+
+              <div class="btn-group m10xtop rw100x ">
+                <a id="theatsMore" class="btn btn-primary btn-xs dropdown-toggle fright">More <span class="caret"></span></a>
+              </div>
             </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready( function(){
+   // $("#proxy_log_visits .ibox-content").append('<div id="visitsChart" style="height:300px"></div>')
+})
+$(function () {
+$('[data-toggle="tooltip"]').tooltip()
+})
+</script>
