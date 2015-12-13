@@ -19,6 +19,7 @@ function index(){
   var result = db.query("SELECT * FROM  navigations");
 
   data = { 
+    content_layout: 'admin_layout',
     container_path: 'admin/navigations/index', 
     navigations: result,
   };
@@ -37,7 +38,8 @@ function create(){
   var result = db.query("SELECT * FROM  navigations");
 
   data = { 
-    container_path: 'admin/navigations/index', 
+    content_layout: 'admin_layout',
+    container_path: 'admin/navigations/index',  
     navigations: result,
   };
 

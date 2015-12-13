@@ -1,0 +1,5 @@
+<div class="row">
+<%
+include_once('../../'+ data.container_path + '.jag')
+%>
+</div>

@@ -1,16 +1,19 @@
 <%
 (function() {
+	include("gadgets_controller.jag");
 
   //FIX-ME get user details from utils
   current_user = session.get('user')
 
   if(current_user){
     data = { 
-      content_layout: 'admin_layout',
-      container_path: 'admin/home/index', 
+      container_path: 'alerts/index',
+      content_layout: 'details_layout',
+      enabled_alerts_gadgets: enabled_alerts_gadgets,
     };
   
-    include("../../views/layouts/application.jag");  
+
+    include("../views/layouts/application.jag");  
   }
   else{
     // FIX-ME Redirect to sessions_controller and check user availability.

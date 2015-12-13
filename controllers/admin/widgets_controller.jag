@@ -19,6 +19,7 @@ function index(){
   var Installedwidgets = findInstalledWidgets()
 
     data = { 
+      content_layout: 'admin_layout',
       container_path: 'admin/widgets/index', 
       widgets: Installedwidgets,
     };
@@ -34,6 +35,7 @@ function show(){
   
   data = { 
       container_path: 'admin/widgets/index', 
+      content_layout: 'admin_layout',
       widgets: Installedwidgets,
       current_widget: widget
     };

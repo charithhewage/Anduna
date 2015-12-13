@@ -34,6 +34,11 @@
 	  	security_summery :	"security summery details",
 		}
   }
+  else if( splitedURI[2] == "alerts"){
+  	enabled_alerts_gadgets = {	
+	  	alert_table: "Alerts",	
+		}
+  }
 
 
 

@@ -34,10 +34,7 @@
                 </a>
             </div>
         </div>
-        <div id="PL_monitor_div" class="ibox-content">
-            <div id="chart_for_pl_monitor" style="min-height:400px; max-height:700px;  width:485px; overflow-y: scroll"></div>
-           
-
+        <div id="PL_monitor_div" class="ibox-content" style="max-height:400px; overflow:scroll">           
             <!-- table --> 
          <table id="summery_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
            <thead id="summery_table_head"></thead>

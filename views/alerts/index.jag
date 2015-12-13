@@ -1,0 +1,14 @@
+<div id="statsBar">
+	<div class="row">
+		<%
+		(function() {
+			for (var key in data.enabled_alerts_gadgets) {
+			  if (data.enabled_alerts_gadgets.hasOwnProperty(key)) {
+			    include('../' + widgetPath + key + '/index.jag')
+			    //print('<input type="hidden" name="enabledWidgets[]"  value="'+key+'" class="enabled-widgets"/>' )
+				}
+			}
+		} ()); 
+		%>	
+	</div>
+</div>
