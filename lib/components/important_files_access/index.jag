@@ -62,7 +62,7 @@
     </div>
 
     <div id="importnat_file_access_div" class="ibox-content resizable">
-      <div id="chart_for_imp_file_access" style="min-height:150px"></div>
+      <div id="chart_for_imp_file_access" style="min-height:360px; width:485px"></div>
 
       <!-- table --> 
          <table id="important_file_access_table">

@@ -8,7 +8,7 @@
 <script src="lib/components/attack_404/assets/js/charts/access_404_Ip_based_pie_chart.js"></script>
 <script src="lib/components/attack_404/assets/js/charts/access_404_Request_based_pie_chart.js"></script>
 <!--<script src="lib/components/attack_404/assets/js/charts/draw_important_access_data_group_by_request.js"></script> -->
-<div id="container" class="col-md-4 resizable-box resizable" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");'>
+<div id="container" class="col-md-4 col-md-6_new" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");'>
     <div class="ibox float-e-margins">
         <!-- <div>-->
         <div class="ibox-title">
@@ -21,9 +21,9 @@
                 <i class="fa fa-wrench"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#" onClick="get_404_request_data_group_by_ip(1)">404 Count based on IP - Bar Chart </a>
+                    <li><a href="#" onClick="get_404_request_data_group_by_ip(1, true)">404 Count based on IP - Bar Chart </a>
                     </li>
-                    <li><a href="#" onClick="get_404_request_data_group_by_ip(2)">404 Count based on IP - Pie Chart </a>
+                    <li><a href="#" onClick="get_404_request_data_group_by_ip(2, true)">404 Count based on IP - Pie Chart </a>
                     </li>
                     <li><a href="#" onClick="get_404_request_data_group_by_request()">404 Count based on Request </a>
                     </li>
@@ -39,8 +39,8 @@
                 </a>
             </div>
         </div>
-        <div id="access_404_div" class="ibox-content">
-            <div id="chart_for_404_access" style="min-height:300px; margin:0; padding:0;"></div>
+        <div id="access_404_div" class="ibox-content resizable">
+            <div id="chart_for_404_access" style="min-height:360px; width:485px"></div>
             <!-- table -->
             <table id="access_404_table">
             <thead id="access_404_table_head"></thead>
@@ -100,9 +100,4 @@
 		</div>
 	</div>
 </div>
-<!-- Widget Hidden data -->
-<div id="Access404Data">
-	<input type="hidden" id="activeTab" value="" />
-	<input type="hidden" id="" value="" />
-	<input type="hidden" id="" value="" />
-</div>
+

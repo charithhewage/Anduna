@@ -4,7 +4,8 @@
 <script src="lib/components/security_summery/assets/js/dao.js"></script>
 <!-- <script src="lib/components/security_summery/assets/js/charts/pl_access_website_based_pie_chart.js"></script> -->
 
-<div id="container" class="col-md-12 resizable-box resizable" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");'>
+<div id="container" class="col-md-12 col-md-12_new" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");'>
+    <div class="ibox float-e-margins">
     <div class="ibox float-e-margins">
         <!-- <div>-->
         <div class="ibox-title">
@@ -29,7 +30,7 @@
             </div>
         </div>
         <div id="PL_monitor_div" class="ibox-content">
-            <div id="chart_for_pl_monitor" style="min-height:300px; margin:0; padding:0;"></div>
+            <div id="chart_for_pl_monitor" style="min-height:360px;  width:485px;"></div>
            
 
             <!-- table --> 

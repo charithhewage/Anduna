@@ -58,7 +58,7 @@
     </div>
 
     <div id="proxy_summery_div" class="ibox-content resizable">
-      <div id="chart_for_proxy_summery" style="min-height:150px"></div>
+      <div id="chart_for_proxy_summery" style="min-height:360px;  width:485px"></div>
       <!-- table --> 
          <table id="proxy_log_table">
            <thead id="proxy_log_table_head"></thead>
