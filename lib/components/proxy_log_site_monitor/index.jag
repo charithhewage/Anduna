@@ -19,15 +19,9 @@
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#" onClick="get_PL_data_group_by_website()">Website Access</a>
                     </li>
-                    <li><a href="#" onClick="get_404_request_data_group_by_ip(2)">404 Count based on IP - Pie Chart </a>
-                    </li>
-                    <li><a href="#" onClick="get_404_request_data_group_by_request()">404 Count based on Request </a>
-                    </li>
-                    <li><a href="#" onClick="show404reqestTable()">Show 404 access table </a>
-                    </li>
-                    <!-- <li><a href="#" onClick="showimportantFileAccessAlData()">Access Count based on Date </a>
-                    </li> -->
-                    <li><a href="#" onClick="show404reqestData()">Show Full Log File </a>
+                    
+                   
+                    <li><a href="#" onClick="get_PL_data()">Show Full Log</a>
                     </li>
                 </ul>
                 <a class="close-link">
