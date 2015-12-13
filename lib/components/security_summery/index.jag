@@ -3,9 +3,14 @@
 
 <script src="lib/components/security_summery/assets/js/dao.js"></script>
 <!-- <script src="lib/components/security_summery/assets/js/charts/pl_access_website_based_pie_chart.js"></script> -->
+<script>
+	
+	$(document).ready(function() {
+    $('#summery_table').DataTable();
+	} );
+</script>
 
 <div id="container" class="col-md-12 col-md-12_new" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");'>
-    <div class="ibox float-e-margins">
     <div class="ibox float-e-margins">
         <!-- <div>-->
         <div class="ibox-title">
@@ -30,23 +35,15 @@
             </div>
         </div>
         <div id="PL_monitor_div" class="ibox-content">
-            <div id="chart_for_pl_monitor" style="min-height:360px;  width:485px;"></div>
+            <div id="chart_for_pl_monitor" style="min-height:400px; max-height:700px;  width:485px; overflow-y: scroll"></div>
            
 
             <!-- table --> 
-         <table id="important_file_access_table">
-           <thead id="important_file_access_table_head"></thead>
-           <tbody id="important_file_access_table_body"></tbody>
+         <table id="summery_table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+           <thead id="summery_table_head"></thead>
+           <tbody id="summery_table_body"></tbody>
          </table>  
-      <!-- table end  -->
-    <!-- table end  -->
-			<!-- info modal load -->
-			
-
-			<!-- modal end / full info modal starts-->
-			
-			<!---modal end -->
-			<!--- modal ends -->
+      
 
 		</div>
 	</div>

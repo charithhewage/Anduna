@@ -60,6 +60,7 @@
   <script src="<%= urlPrefix %>assets/js/plugins/dataTables/dataTables.responsive.js"></script>
   <script src="<%= urlPrefix %>assets/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
   <script src="<%= urlPrefix %>assets/js/slidedown.js"></script>
+  <script src="<%= urlPrefix %>assets/js/plugins/dataTables/dataTables.js"></script>
 
   <script src="<%= urlPrefix %>assets/js/navigations.js"></script>
 

@@ -5,7 +5,7 @@ log.info("Access Summary Server");
 
 try{
 
-    var result = db.query("SELECT clientIpAddress, requestedFile, resultCode, size, url, browserInfo,date_time FROM AL_LastHourImportantFileAccessInfo" );
+    db.query("INSERT INTO Alert_Info (id,description_1,description_2) VALUES (?, ?,?)" );
  //print(result);
     response.contentType = "application/json";
     response.characterEncoding = "UTF-8";

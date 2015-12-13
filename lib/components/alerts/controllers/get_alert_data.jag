@@ -1,11 +1,11 @@
 <%
 var log = new Log();
-log.info("Access Summary Server");
+log.info("PL details grup by website");
 
 
 try{
 
-    var result = db.query("SELECT clientIpAddress, requestedFile, resultCode, size, url, browserInfo,date_time FROM AL_LastHourImportantFileAccessInfo" );
+    var result = db.query("SELECT Id, description_1, description_1 FROM Alert_Info");
  //print(result);
     response.contentType = "application/json";
     response.characterEncoding = "UTF-8";
