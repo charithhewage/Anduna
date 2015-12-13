@@ -17,6 +17,4 @@ catch(e){
 finally{
     db.close();
 }
-
-
 %>

@@ -15,7 +15,7 @@
       <li>
         <span class="m-r-sm text-muted welcome-message">Welcome to the Dashboard</span>
       </li>
-      <li class="dropdown">
+      <!-- <li class="dropdown">
         <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
           <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
         </a>
@@ -24,7 +24,7 @@
           <li>
             <div class="dropdown-messages-box">
               <a href="profile.html" class="pull-left">
-                <!-- <img alt="image" class="img-circle" src="assets/images/a7.jpg"> -->
+               <img alt="image" class="img-circle" src="assets/images/a7.jpg"> 
               </a>
               
               <div>
@@ -38,7 +38,7 @@
             <li>
               <div class="dropdown-messages-box">
                 <a href="profile.html" class="pull-left">
-                  <!-- <img alt="image" class="img-circle" src="img/a4.jpg"> --> 
+                  <img alt="image" class="img-circle" src="img/a4.jpg"> 
                 </a>
                 
                 <div>
@@ -53,7 +53,7 @@
             <li>
               <div class="dropdown-messages-box">
                 <a href="profile.html" class="pull-left">
-                  <!-- <img alt="image" class="img-circle" src="img/profile.jpg"> -->
+                  <img alt="image" class="img-circle" src="img/profile.jpg">
                 </a>
                 <div>
               
@@ -116,7 +116,7 @@
               </div>
             </li>
             </ul>
-        </li>
+        </li> -->
 
 
         <li>

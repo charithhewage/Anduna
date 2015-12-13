@@ -5,7 +5,7 @@ log.info("404 details grup by ip");
 
 try{
 
-    var result = db.query("SELECT clientIpAddress, COUNT(date_time) AS totalcount, SUM(size) AS request_size, requestedFile FROM AL_LastHour404Request GROUP BY clientIpAddress");
+    var result = db.query("SELECT DISTINCT clientIpAddress, COUNT(date_time) AS totalcount, SUM(size) AS request_size, requestedFile FROM AL_LastHour404Request GROUP BY clientIpAddress LIMIT 50");
  //print(result);
     response.contentType = "application/json";
     response.characterEncoding = "UTF-8";
