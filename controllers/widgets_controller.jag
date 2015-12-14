@@ -1,0 +1,21 @@
+<%
+
+var log = new Log();
+
+// log.info(request.getAllParameters("UTF-8"))
+var params = request.getAllParameters("UTF-8")
+
+delete_current = db.query("DELETE FROM `widgets` WHERE page= 'dashboards'")
+for (var key in params) {
+  if (params.hasOwnProperty(key)) {
+
+  	insert_new = db.query("INSERT INTO `widgets` (`id`, `key_title`, `state`, `page`) VALUES (NULL, '"+key+"', '1', 'dashboards')")
+  	
+  }
+}
+
+response.contentType = "application/json";
+response.characterEncoding = "UTF-8";
+response.content = true;
+
+%>

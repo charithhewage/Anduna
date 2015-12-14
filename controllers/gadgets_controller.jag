@@ -1,24 +1,26 @@
 <%
 (function() {
-
-	//var r = db.query("select * from `` WHERE page_id = '1'")
+	var log = new Log();
 
 	var originalURI = request.getRequestURI();
 	var splitedURI = originalURI.split("/");
   splitedURI.push("", "", "")
 
+  //get all installed widgets from widget.json
+  var widgets = require(widgetPath+ 'widgets.json')
+
+	session.put("widgets", widgets);
+
 	if( splitedURI[2] == "dashboards"){
-  	enabled_stats_gadgets = {	
-	  	proxy_log_visits :	"Proxy Log Visits",
-	  	//important_files_access :	"Important Files Access",
-	  	access_log_hits : "Access Log Hits ",
-	  	bandwidth_summary	: "Bandwidth Summary",
-	  	//attack_404	: "404 attack",
-	  	threats_summary : "Threats Summary",
-	  	//cpu_info : "CPU Info",
-	  	//memory_info : "Memory Info",
-	    //ip_info_map : "IP InfoMap",
-		}
+		
+		enabled_stats_gadgets = {}
+		
+		result = db.query("select key_title from widgets where page = 'dashboards' ORDER BY id ASC ")
+		
+		result.forEach( function(i){
+			enabled_stats_gadgets[i.key_title] = i.key_title
+		});
+  
   }
   else if( splitedURI[2] == "securities"){
   	enabled_stats_gadgets = {	

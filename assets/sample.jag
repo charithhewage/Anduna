@@ -1,0 +1,17 @@
+<%
+var log = new Log();
+log.info(request.getProtocol());
+log.info(request.getMethod());
+log.info(request.getQueryString());
+log.info(request.getContent());
+log.info(request.getInputStream());
+
+
+log.info(request.getAllParameters("UTF-8"))
+
+
+response.contentType = "application/json";
+response.characterEncoding = "UTF-8";
+response.content = "result";
+
+%>

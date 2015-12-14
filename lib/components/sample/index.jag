@@ -1,0 +1,5 @@
+<script type="text/javascript" src="lib/components/sample/dao.js"></script>
+sample widget
+
+
+<a href="#" onClick="samplefunc(1)">Click Me</a>

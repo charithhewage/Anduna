@@ -1,10 +1,18 @@
 {
-	access_summary: "Access Summary",
-	important_files_access: "Important Files Access",
-	proxy_log_visits: "Proxy Log Visits",
-	request_summary: "Request Summary",
+	access_log_hits: "Access Server Usage",
+	alert_table: "Alerts Table",
+	attack_404: "404 Access Count",
+	bandwidth_summary: "Bandwidth",
+	cpu_info: "CPU Info",
+	important_files_access: "Important File Access Info",
+	ip_info_map: "IP Info Map",
+	memory_info: "Memory Info",
+	proxy_log_site_monitor: "Proxy log site Monitor",
+	proxy_log_summery: "Proxy log Summary",
+	proxy_log_visits: "Proxy log visits",
+	request_summary: "Requests Summary",
+	security_summery: "Security Summary",
 	server_access_summary: "Server Access Summary",
-	alerts: "Alerts",
-	//sample_widget: "Sample Widget"
+	threats_summary: "Threats Summary",
 	
 }
