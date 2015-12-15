@@ -15,7 +15,7 @@
 		
 		enabled_stats_gadgets = {}
 		
-		result = db.query("select key_title from widgets where page = 'dashboards' ORDER BY id ASC ")
+		result = db.query("select key_title from widgets where page_id = 'dashboards' ORDER BY id ASC ")
 		
 		result.forEach( function(i){
 			enabled_stats_gadgets[i.key_title] = i.key_title

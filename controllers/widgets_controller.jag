@@ -5,11 +5,11 @@ var log = new Log();
 // log.info(request.getAllParameters("UTF-8"))
 var params = request.getAllParameters("UTF-8")
 
-delete_current = db.query("DELETE FROM `widgets` WHERE page= 'dashboards'")
+delete_current = db.query("DELETE FROM `widgets` WHERE page_id= 'dashboards'")
 for (var key in params) {
   if (params.hasOwnProperty(key)) {
 
-  	insert_new = db.query("INSERT INTO `widgets` (`id`, `key_title`, `state`, `page`) VALUES (NULL, '"+key+"', '1', 'dashboards')")
+  	insert_new = db.query("INSERT INTO `widgets` (`id`, `key_title`, `state`, `page_id`) VALUES (NULL, '"+key+"', '1', 'dashboards')")
   	
   }
 }

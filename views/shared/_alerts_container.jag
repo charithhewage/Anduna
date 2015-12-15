@@ -83,8 +83,10 @@
     
     $("#JSWFormSubmit").click( function(){
       var data = $("#formWidgetEnable").serialize();
+      console.log('button click');
       
       $.post('widgets', data, function() {
+        console.log('widget cont');
         window.location.reload()
       }, 'json')
 
