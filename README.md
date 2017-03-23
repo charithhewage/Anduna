@@ -18,7 +18,7 @@ We have taken another approach to handle the data which come from Complex Event 
 
 
 ### Contributors
-[Charith Lakmina](https://github.com/charithhewage)
-[Nadeesha Weerasooriya](https://github.com/nadzrw)
-[Harindu Korala](https://github.com/hckorala)
-[Damitha Kithmal](https://github.com/dkithmal)
+* [Charith Lakmina](https://github.com/charithhewage)
+* [Nadeesha Weerasooriya](https://github.com/nadzrw)
+* [Harindu Korala](https://github.com/hckorala)
+* [Damitha Kithmal](https://github.com/dkithmal)
